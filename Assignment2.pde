@@ -9,5 +9,6 @@ void setup()
 void draw()
 {
   background(120);
-  player1.Render();  
+  player1.Render();
+  player1.Update();
 }

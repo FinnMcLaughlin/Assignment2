@@ -79,4 +79,19 @@ class Player
    {
      shape(sprite, x, 400);
    }
+   
+   void Update()
+   {
+     if( keyPressed )
+     {
+       if( key == 'a' && x > - 40 )
+       {
+         x = x - 2;
+       }
+       if( key == 'd' && x < 540 )
+       {
+         x = x + 2;
+       }
+     }
+  }
 }
