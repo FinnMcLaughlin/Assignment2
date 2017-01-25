@@ -30,6 +30,27 @@ class Player
       body.vertex(100, 0);
       body.endShape(CLOSE);
       
+      PShape gun = createShape();
+      gun.beginShape();
+      gun.fill(80);
+      gun.vertex(50, 120);
+      gun.vertex(50, 85);
+      gun.vertex(60, 85);
+      gun.vertex(60, 105);
+      gun.endShape(CLOSE);
+      
+      PShape gun_r = createShape();
+      gun_r.beginShape();
+      gun_r.fill(80);
+      gun_r.vertex(150, 120);
+      gun_r.vertex(150, 85);
+      gun_r.vertex(140, 85);
+      gun_r.vertex(140, 105);
+      gun_r.endShape(CLOSE);
+      
+      sprite.addChild(body);
+      sprite.addChild(gun);
+      sprite.addChild(gun_r);
       
     }
     
