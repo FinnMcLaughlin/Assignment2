@@ -2,8 +2,8 @@ Player player1;
 
 void setup()
 {
-  size(700, 600);
-  player1 = new Player(300);
+  size(500, 650);
+  player1 = new Player(400);
 }
     
 void draw()

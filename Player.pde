@@ -77,20 +77,21 @@ class Player
     
    void Render()
    {
-     shape(sprite, x, 400);
+     scale(.8);
+     shape(sprite, x, 650);
    }
    
    void Update()
    {
      if( keyPressed )
      {
-       if( key == 'a' && x > - 40 )
+       if( key == 'a' && x > -40 )
        {
-         x = x - 2;
+         x = x - 5;
        }
-       if( key == 'd' && x < 540 )
+       if( key == 'd' && x < 460 )
        {
-         x = x + 2;
+         x = x + 5;
        }
      }
   }
