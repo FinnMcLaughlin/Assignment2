@@ -1,6 +1,7 @@
 Player player1;
 Enemy enemy1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
+ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
 void setup()
 {
