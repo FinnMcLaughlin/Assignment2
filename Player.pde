@@ -1,6 +1,8 @@
 class Player
 {   
     int x;
+    float gunlpos = 280;
+    float gunrpos = 370;
     PShape sprite;
     
     Player(int x)
@@ -88,11 +90,21 @@ class Player
        if( key == 'a' && x > -40 )
        {
          x = x - 5;
+         gunlpos = gunlpos - 5;
+         gunrpos = gunrpos - 5;
        }
        if( key == 'd' && x < 460 )
        {
          x = x + 5;
+         gunlpos = gunlpos + 5;
+         gunrpos = gunrpos + 5;
        }
+     }
+     
+     if( frameCount % 12 == 0 )
+     {
+       PlayerBullet b = new PlayerBullet(gunlpos, gunrpos, 725);
+       PBullets.add(b);
      }
   }
 }
