@@ -48,9 +48,30 @@ class Player
       gun_r.vertex(140, 105);
       gun_r.endShape(CLOSE);
       
+      PShape engine = createShape();
+      engine.beginShape();
+      engine.fill(150);
+      engine.vertex(100, 135);
+      engine.vertex(90, 140);
+      engine.vertex(90, 150);
+      engine.vertex(110, 150);
+      engine.vertex(110, 140);
+      engine.endShape(CLOSE);
+      
+      PShape cockpit = createShape();
+      cockpit.beginShape();
+      cockpit.fill(245, 230, 85);
+      cockpit.vertex(100, 30);
+      cockpit.vertex(90, 40);
+      cockpit.vertex(100, 50);
+      cockpit.vertex(110, 40);
+      cockpit.endShape(CLOSE);
+      
       sprite.addChild(body);
       sprite.addChild(gun);
       sprite.addChild(gun_r);
+      sprite.addChild(engine);
+      sprite.addChild(cockpit);
       
     }
     
