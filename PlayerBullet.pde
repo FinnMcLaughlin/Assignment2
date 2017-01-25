@@ -19,6 +19,11 @@ class PlayerBullet
   void Update()
   {
     y = y - 5;
+    
+    /*if(y < 100)
+    {
+      PBullets.remove(this);
+    }*/
   }
   
   
