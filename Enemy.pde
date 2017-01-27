@@ -6,7 +6,7 @@ class Enemy
   Enemy()
   {
     CreateHive(); 
-    //CreateGuard();
+    CreateGuard();
   }
   
   void CreateHive()
@@ -63,17 +63,63 @@ class Enemy
   void CreateGuard()
   {
    Guard = createShape(GROUP);
-   PShape body = createShape(ELLIPSE, 0, 0, 50, 50);
-   //PShape leftweapon = createShape(ARC, 50, 50, 30, 30, 1000, HALF_PI);
+   fill(130, 30, 120);
+   PShape body = createShape(ELLIPSE, 0, 0, 60, 60);
+   PShape rightweapon = createShape(ARC, 18, 25, 30, 30, 15, 25, HALF_PI);
+   PShape leftweapon = createShape(ARC, -18, 25, 30, 30, 15, 25, HALF_PI);
+   fill(255);
+   PShape cockpit = createShape(ELLIPSE, 0, 15, 25, 20);
    
+   PShape leftengine = createShape();
+   leftengine.beginShape();
+   leftengine.fill(100);
+   leftengine.vertex(-15, -10);
+   leftengine.vertex(-25, -10);
+   leftengine.vertex(-35, -35);
+   leftengine.vertex(-20, -35);
+   leftengine.endShape(CLOSE);
+   
+   PShape rightengine = createShape();
+   rightengine.beginShape();
+   rightengine.fill(100);
+   rightengine.vertex(15, -10);
+   rightengine.vertex(25, -10);
+   rightengine.vertex(35, -35);
+   rightengine.vertex(20, -35);
+   rightengine.endShape(CLOSE);
+   
+   PShape leftgun = createShape();
+   leftgun.beginShape();
+   leftgun.fill(100);
+   leftgun.vertex(-25, 20);
+   leftgun.vertex(-40, 40);
+   leftgun.vertex(-32, 45);
+   leftgun.vertex(-17, 26);
+   leftgun.endShape();
+
+   PShape rightgun = createShape();
+   rightgun.beginShape();
+   rightgun.fill(100);
+   rightgun.vertex(25, 20);
+   rightgun.vertex(40, 40);
+   rightgun.vertex(32, 45);
+   rightgun.vertex(17, 26);
+   rightgun.endShape();
+   
+   Guard.addChild(leftengine);
+   Guard.addChild(rightengine);
+   Guard.addChild(leftgun);
+   Guard.addChild(rightgun);
+   Guard.addChild(rightweapon);
+   Guard.addChild(leftweapon);
    Guard.addChild(body);
-   //Guard.addChild(leftweapon);
+   Guard.addChild(cockpit);
   }
   
   
   void Render()
   {
     shape(Hive, 100, 100);
-    //shape(Guard, 300, 100);
+    shape(Guard, 400, 100);
   }
 }
