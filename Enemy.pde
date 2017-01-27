@@ -1,10 +1,12 @@
 class Enemy
 {
   PShape Hive;
+  PShape Guard;
   
   Enemy()
   {
-    CreateHive();
+    CreateHive(); 
+    //CreateGuard();
   }
   
   void CreateHive()
@@ -58,8 +60,20 @@ class Enemy
    Hive.addChild(cockpit);
   }
   
+  void CreateGuard()
+  {
+   Guard = createShape(GROUP);
+   PShape body = createShape(ELLIPSE, 0, 0, 50, 50);
+   //PShape leftweapon = createShape(ARC, 50, 50, 30, 30, 1000, HALF_PI);
+   
+   Guard.addChild(body);
+   //Guard.addChild(leftweapon);
+  }
+  
+  
   void Render()
   {
-    shape(Hive, 100, 100); 
+    shape(Hive, 100, 100);
+    //shape(Guard, 300, 100);
   }
 }

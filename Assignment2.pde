@@ -18,9 +18,11 @@ void draw()
   
   enemy1.Render();
   
-  for(PlayerBullet PB:PBullets)
+  int size = PBullets.size();
+  for(int i = size - 1; i >= 0; i--)
   {
-    PB.Render();
-    PB.Update();
+     PlayerBullet PB = PBullets.get(i);
+     PB.Update();
+     PB.Render();
   }
 }
