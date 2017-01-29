@@ -4,13 +4,17 @@ class Enemy
   PShape Guard;
   PShape Patriot;
   PShape Hunter;
+  float x, y;
   
-  Enemy()
+  Enemy(float x, float y)
   {
+    this.x = x;
+    this.y = y;
+    
     CreateHive(); 
-    CreatePatriot();
+    //CreatePatriot();
     //CreateHunter();
-    CreateGuard();
+    //CreateGuard();
   }
   
   void CreateHive()                            //Create Hive
@@ -203,9 +207,19 @@ class Enemy
   
   void Render()
   {
-    shape(Hive, 100, 100);
-    shape(Patriot, 100, 300);
+    shape(Hive, x, y);
+    //shape(Patriot, 100, 300);
     //shape(Hunter, 400, 300);
-    shape(Guard, 100, 500);
+    //shape(Guard, 100, 500);
+  }
+  
+  void Update()
+  {
+    y = y + 2;
+    
+    if( y > 500 )
+    {
+      Enemies.remove(this);
+    }
   }
 }

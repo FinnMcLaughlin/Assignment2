@@ -1,3 +1,4 @@
+Level level;
 Player player1;
 Enemy enemy1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
@@ -7,7 +8,7 @@ void setup()
 {
   size(500, 650);
   player1 = new Player(225);
-  enemy1 = new Enemy();
+  enemy1 = new Enemy(20, 100);
 }
     
 void draw()
@@ -16,13 +17,22 @@ void draw()
   player1.Render();
   player1.Update();
   
-  enemy1.Render();
+  stroke(0);
+  level = new Level();
   
-  int size = PBullets.size();
-  for(int i = size - 1; i >= 0; i--)
+  int Bullsize = PBullets.size();
+  for(int i = Bullsize - 1; i >= 0; i--)
   {
      PlayerBullet PB = PBullets.get(i);
      PB.Update();
      PB.Render();
+  }
+  
+  int Enemysize = Enemies.size();
+  for(int i = Enemysize - 1; i >= 0; i--)
+  {
+    Enemy E = Enemies.get(i);
+    E.Render();
+    E.Update();
   }
 }
