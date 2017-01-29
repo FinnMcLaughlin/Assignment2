@@ -9,6 +9,7 @@ class Enemy
   {
     CreateHive(); 
     CreatePatriot();
+    CreateHunter();
     CreateGuard();
   }
   
@@ -126,6 +127,22 @@ class Enemy
     Patriot.addChild(cockpit);
   }
   
+  /*void CreateHunter()
+  {
+   Hunter  = createShape(GROUP);
+   
+   PShape body = createShape(RECT, 70, 0, 60, 40);
+   PShape leftwing = createShape();
+   leftwing.beginShape();
+   leftwing.
+   leftwing.endShape(CLOSE);
+   
+   Hunter.addChild(body);
+   Hunter.addChild(leftwing);
+    
+    
+  }*/
+  
   void CreateGuard()                         //Create Guard
   {
    Guard = createShape(GROUP);
@@ -187,6 +204,7 @@ class Enemy
   {
     shape(Hive, 100, 100);
     shape(Patriot, 100, 300);
+    shape(Hunter, 400, 300);
     shape(Guard, 400, 100);
   }
 }
