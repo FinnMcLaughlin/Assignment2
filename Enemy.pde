@@ -217,7 +217,7 @@ class Enemy
   {
     y = y + 2;
     
-    if( y > 500 )
+    if( y > height )
     {
       Enemies.remove(this);
     }
