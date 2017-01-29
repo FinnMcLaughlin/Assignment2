@@ -9,7 +9,7 @@ class Enemy
   {
     CreateHive(); 
     CreatePatriot();
-    CreateHunter();
+    //CreateHunter();
     CreateGuard();
   }
   
@@ -20,42 +20,43 @@ class Enemy
    PShape body = createShape();
    body.beginShape();
    body.fill(130, 30, 120);
-   body.vertex(50, 10);
-   body.vertex(110, 10);
-   body.vertex(110, 30);
-   body.vertex(90, 50);
-   body.vertex(70, 50);
-   body.vertex(50, 30);
+   body.vertex(100, 10);
+   body.vertex(135, 10);
+   body.vertex(135, 30);
+   body.vertex(105, 50);
+   body.vertex(85, 50);
+   body.vertex(65, 30);
+   body.vertex(65, 10);
    body.endShape(CLOSE);
    
    PShape leftwing = createShape();
    leftwing.beginShape();
    leftwing.fill(130, 30, 120);
-   leftwing.vertex(60, 0);
-   leftwing.vertex(40, 0);
-   leftwing.vertex(25, 25);
-   leftwing.vertex(50, 60);
-   leftwing.vertex(60, 60);
+   leftwing.vertex(75, 0);
+   leftwing.vertex(55, 0);
+   leftwing.vertex(40, 25);
+   leftwing.vertex(65, 60);
+   leftwing.vertex(75, 60);
    leftwing.endShape(CLOSE);
    
    PShape rightwing = createShape();
    rightwing.beginShape();
    rightwing.fill(130, 30, 120);
-   rightwing.vertex(100, 0);
-   rightwing.vertex(120, 0);
-   rightwing.vertex(135, 25);
-   rightwing.vertex(110, 60);
-   rightwing.vertex(100, 60);
+   rightwing.vertex(115, 0);
+   rightwing.vertex(135, 0);
+   rightwing.vertex(150, 25);
+   rightwing.vertex(125, 60);
+   rightwing.vertex(115, 60);
    rightwing.endShape(CLOSE);
    
    PShape cockpit = createShape();
    cockpit.beginShape();
-   cockpit.vertex(65, 30);
-   cockpit.vertex(95, 30);
-   cockpit.vertex(95, 35);
-   cockpit.vertex(85, 45);
-   cockpit.vertex(75, 45);
-   cockpit.vertex(65, 35);
+   cockpit.vertex(80, 30);
+   cockpit.vertex(110, 30);
+   cockpit.vertex(110, 35);
+   cockpit.vertex(100, 45);
+   cockpit.vertex(90, 45);
+   cockpit.vertex(80, 35);
    cockpit.endShape(CLOSE);
    
    Hive.addChild(body);
@@ -147,46 +148,46 @@ class Enemy
   {
    Guard = createShape(GROUP);
    fill(130, 30, 120);
-   PShape body = createShape(ELLIPSE, 0, 0, 60, 60);
-   PShape rightweapon = createShape(ARC, 18, 25, 30, 30, 15, 25, HALF_PI);
-   PShape leftweapon = createShape(ARC, -18, 25, 30, 30, 15, 25, HALF_PI);
+   PShape body = createShape(ELLIPSE, 100, 0, 60, 60);
+   PShape rightweapon = createShape(ARC, 118, 25, 30, 30, 15, 25, HALF_PI);
+   PShape leftweapon = createShape(ARC, 82, 25, 30, 30, 15, 25, HALF_PI);
    fill(255);
-   PShape cockpit = createShape(ELLIPSE, 0, 15, 25, 20);
+   PShape cockpit = createShape(ELLIPSE, 100, 15, 25, 20);
    
    PShape leftengine = createShape();
    leftengine.beginShape();
    leftengine.fill(100);
-   leftengine.vertex(-15, -10);
-   leftengine.vertex(-25, -10);
-   leftengine.vertex(-35, -35);
-   leftengine.vertex(-20, -35);
+   leftengine.vertex(85, -10);
+   leftengine.vertex(75, -10);
+   leftengine.vertex(65, -35);
+   leftengine.vertex(80, -35);
    leftengine.endShape(CLOSE);
    
    PShape rightengine = createShape();
    rightengine.beginShape();
    rightengine.fill(100);
-   rightengine.vertex(15, -10);
-   rightengine.vertex(25, -10);
-   rightengine.vertex(35, -35);
-   rightengine.vertex(20, -35);
+   rightengine.vertex(115, -10);
+   rightengine.vertex(125, -10);
+   rightengine.vertex(135, -35);
+   rightengine.vertex(120, -35);
    rightengine.endShape(CLOSE);
    
    PShape leftgun = createShape();
    leftgun.beginShape();
    leftgun.fill(100);
-   leftgun.vertex(-25, 20);
-   leftgun.vertex(-40, 40);
-   leftgun.vertex(-32, 45);
-   leftgun.vertex(-17, 26);
+   leftgun.vertex(75, 20);
+   leftgun.vertex(60, 40);
+   leftgun.vertex(68, 45);
+   leftgun.vertex(83, 26);
    leftgun.endShape();
 
    PShape rightgun = createShape();
    rightgun.beginShape();
    rightgun.fill(100);
-   rightgun.vertex(25, 20);
-   rightgun.vertex(40, 40);
-   rightgun.vertex(32, 45);
-   rightgun.vertex(17, 26);
+   rightgun.vertex(125, 20);
+   rightgun.vertex(140, 40);
+   rightgun.vertex(132, 45);
+   rightgun.vertex(117, 26);
    rightgun.endShape();
    
    Guard.addChild(leftengine);
@@ -204,7 +205,7 @@ class Enemy
   {
     shape(Hive, 100, 100);
     shape(Patriot, 100, 300);
-    shape(Hunter, 400, 300);
-    shape(Guard, 400, 100);
+    //shape(Hunter, 400, 300);
+    shape(Guard, 100, 500);
   }
 }
