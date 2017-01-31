@@ -1,6 +1,5 @@
 Level level;
 Player player1;
-Enemy enemy1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
@@ -8,7 +7,6 @@ void setup()
 {
   size(500, 650);
   player1 = new Player(225);
-  enemy1 = new Enemy(20, 100);
 }
     
 void draw()

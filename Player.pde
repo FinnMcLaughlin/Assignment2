@@ -8,10 +8,10 @@ class Player
     Player(int x)
     {
       this.x = x;
-      
       Create();
     }
     
+        
     void Create()
     {
       sprite = createShape(GROUP);
@@ -75,7 +75,7 @@ class Player
       sprite.addChild(engine);
       sprite.addChild(cockpit);
       
-    }
+   }
     
    void Render()
    {

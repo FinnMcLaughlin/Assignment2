@@ -25,6 +25,4 @@ class PlayerBullet
       PBullets.remove(this);
     }
   }
-  
-  
 }
