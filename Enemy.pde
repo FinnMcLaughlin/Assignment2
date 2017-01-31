@@ -3,7 +3,6 @@ class Enemy
   PShape Hive;
   PShape Guard;
   PShape Patriot;
-  PShape Hunter;
   int type;
   float x, y;
   
@@ -122,22 +121,6 @@ class Enemy
     Patriot.addChild(cockpit);
   }
   
-  /*void CreateHunter()
-  {
-   Hunter  = createShape(GROUP);
-   
-   PShape body = createShape(RECT, 70, 0, 60, 40);
-   PShape leftwing = createShape();
-   leftwing.beginShape();
-   leftwing.
-   leftwing.endShape(CLOSE);
-   
-   Hunter.addChild(body);
-   Hunter.addChild(leftwing);
-    
-    
-  }*/
-  
   void CreateGuard()                         //Create Guard
   {
    Guard = createShape(GROUP);
@@ -205,17 +188,19 @@ class Enemy
     {
       shape(Patriot, x, y);
     }
-    //shape(Hunter, 400, 300);
-    //shape(Guard, 100, 500);
+    if(type == 3)
+    {
+      shape(Guard, x, y);
+    }
   }
   
   void Update()
   {
-    y = y + 2;
+      y = y + 2;
     
-    if( y > height )
-    {
-      Enemies.remove(this);
-    }
+      if( y > height )
+      {
+        Enemies.remove(this);
+      }
   }
 }

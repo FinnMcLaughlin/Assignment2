@@ -12,7 +12,7 @@ class Level
    
    if(frameCount % 120 == 0)
    {
-     BSprite2 = new Patriot(width-200, -30, 2);
+     BSprite2 = new Guard(width-300, -30, 3);
      Enemies.add(BSprite2);
    }
    
