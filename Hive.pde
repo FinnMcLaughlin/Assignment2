@@ -6,12 +6,12 @@ class Hive extends Enemy
     this.y = -100;
   }
   
-  Hive(float x, float y, int type)
+  Hive(float x, float y, int type, int p)
   {
     this.x = x;
     this.y = y;
     this.type = type;
-    //this.p = p;
+    this.p = p;
     
     CreateHive();
   }

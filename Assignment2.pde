@@ -1,6 +1,7 @@
 Level level;
 Player player1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
+ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
 void setup()
@@ -24,6 +25,14 @@ void draw()
      PlayerBullet PB = PBullets.get(i);
      PB.Update();
      PB.Render();
+  }
+  
+  int EBullsize = EBullets.size();
+  for(int i = EBullsize - 1; i >= 0; i--)
+  {
+     EnemyBullet EB = EBullets.get(i);
+     EB.Update();
+     EB.Render();
   }
   
   int Enemysize = Enemies.size();

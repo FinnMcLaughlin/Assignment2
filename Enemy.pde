@@ -5,6 +5,7 @@ class Enemy
   PShape Patriot;
   int type, p;
   float x, y;
+  float dir = 2;
   
   void CreateHive()                            //Create Hive
   {
@@ -198,35 +199,39 @@ class Enemy
   {
       if(type == 1)
       {
-       
-        y = TopDown(y);
+        switch(p)
+        {
+          case 1: y = TopDown(y);
+                  break;
+          
+          case 2: y = ZigZag(x, y);
+                  break;
+        }
         
         if(y > height)
         {
           Enemies.remove(this);
         }
       }
-      if(type == 2)
+      
+      else if(type == 2)
       {
 
-        //y = ZigZag(x, y);
-        float dir = 2;
-    
-        if(x > 500 || x < -50)
-        {
-          dir = -dir;
-        }
-        
-        x = x + dir;
-        y = y + 2;
+        y = ZigZag(x, y);
         
         if( y > height )
         {
           Enemies.remove(this);
         }
         
+        if( frameCount % 30 == 0 )
+        {
+          EnemyBullet EB = new EnemyBullet(300, 500, 0);
+          EBullets.add(EB);
+        }
       }
-      if(type == 3)
+      
+      else if(type == 3)
       {
         x = x - 2;
         
@@ -240,24 +245,22 @@ class Enemy
   
   
   
-  float TopDown(float y)
+  float TopDown(float ypos)
   {
-    y = y + 2;
-    return(y);
+    ypos = ypos + 2;
+    return(ypos);
   }
   
-  float ZigZag(float x, float y)
-  {
-    float dir = 2;
-    
-    if(x > 300 || x < 0)
+  float ZigZag(float xpos, float ypos)
+  { 
+    if(x > 400 || x < 0)
     {
       dir = -dir;
     }
     
-    x = x + dir;
-    y = y + 2;
+    x = xpos + dir;
+    ypos = ypos + 2;
     
-    return(y);
+    return(ypos);
   }
 }
