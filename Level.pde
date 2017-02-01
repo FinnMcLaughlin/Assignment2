@@ -2,39 +2,76 @@ class Level
 {
  Level()
  {
-   Enemy BSprite, BSprite2;
+   float pos;
+   Enemy ESprite;
    
-   if(frameCount % 60 == 0)
+   if(frameCount == 60)
    {
-     BSprite = new Hive(width/2, -30, 1);
-     Enemies.add(BSprite);
+     ESprite = new Hive(225, -30, 1);
+     Enemies.add(ESprite);
+     ESprite = new Hive(50, -70, 1);
+     Enemies.add(ESprite);
+     ESprite = new Hive(400, -70, 1);
+     Enemies.add(ESprite);
    }
    
-   if(frameCount % 120 == 0)
-   {
-     BSprite2 = new Guard(width-300, -30, 3);
-     Enemies.add(BSprite2);
-   }
+     if(frameCount == 120)
+     {
+       for(int i=-25; i < 520; i += 125)
+       {
+         ESprite = new Hive(0+i, -30, 1);
+         Enemies.add(ESprite);
+       }
+     }
+     
+     if(frameCount == 180)
+     {
+       for(int i=-25; i < 250; i += 125)
+       {
+         ESprite = new Hive(0+i, -30, 1);
+         Enemies.add(ESprite);
+       }
+       for(int i=-25; i < 250; i += 125)
+       {
+         ESprite = new Hive(250+i, -100, 1);
+         Enemies.add(ESprite);
+       }
+       for(int i=-25; i < 250; i += 125)
+       {
+         ESprite = new Hive(0+i, -170, 1);
+         Enemies.add(ESprite);
+       }
+     }
    
-   /*if( frameCount % 120 == 0 )
+   if(frameCount == 300)
    {
-       Enemy E = new Enemy(20, -50);
-       Enemy E2 = new Enemy(width-20, -50);
-       Enemy E3 = new Enemy(125, -75);
-       Enemy E4 = new Enemy(width-125, -75);
-       Enemy E5 = new Enemy(width/2, -65);
-       
-       Enemies.add(E);
-       Enemies.add(E2);
-       Enemies.add(E3);
-       Enemies.add(E4);
-       Enemies.add(E5);
-   }*/ 
- }
-  
-  
-  
-  
-  
-  
+     for(int i=0; i < 250; i += 125)
+     {
+       ESprite = new Hive(-30+i, -30, 1);
+       Enemies.add(ESprite);
+     }
+     
+     for(int i=0; i < 250; i += 125)
+     {
+       ESprite = new Hive(350+i, -30, 1);
+       Enemies.add(ESprite);
+     }
+   }   
+   
+   
+   
+   
+   
+   /*pos = random(20, 500);
+   if(frameCount % 180 == 0)
+   {
+     for(int i=0; i < 200; i += 50)
+     {
+        ESprite = new Guard(600+(i), pos, 3);
+        Enemies.add(ESprite);
+     }
+   }*/
+   
+    
+ }  
 }

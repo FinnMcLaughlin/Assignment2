@@ -11,6 +11,7 @@ class Hive extends Enemy
     this.x = x;
     this.y = y;
     this.type = type;
+    //this.p = p;
     
     CreateHive();
   }

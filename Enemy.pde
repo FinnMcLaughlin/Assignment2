@@ -3,7 +3,7 @@ class Enemy
   PShape Hive;
   PShape Guard;
   PShape Patriot;
-  int type;
+  int type, p;
   float x, y;
   
   void CreateHive()                            //Create Hive
@@ -196,11 +196,68 @@ class Enemy
   
   void Update()
   {
-      y = y + 2;
-    
-      if( y > height )
+      if(type == 1)
       {
-        Enemies.remove(this);
+       
+        y = TopDown(y);
+        
+        if(y > height)
+        {
+          Enemies.remove(this);
+        }
       }
+      if(type == 2)
+      {
+
+        //y = ZigZag(x, y);
+        float dir = 2;
+    
+        if(x > 500 || x < -50)
+        {
+          dir = -dir;
+        }
+        
+        x = x + dir;
+        y = y + 2;
+        
+        if( y > height )
+        {
+          Enemies.remove(this);
+        }
+        
+      }
+      if(type == 3)
+      {
+        x = x - 2;
+        
+        if(x < 0)
+        {
+          Enemies.remove(this);
+        }
+      }
+  }
+  
+  
+  
+  
+  float TopDown(float y)
+  {
+    y = y + 2;
+    return(y);
+  }
+  
+  float ZigZag(float x, float y)
+  {
+    float dir = 2;
+    
+    if(x > 300 || x < 0)
+    {
+      dir = -dir;
+    }
+    
+    x = x + dir;
+    y = y + 2;
+    
+    return(y);
   }
 }

@@ -1,7 +1,5 @@
 class Patriot extends Enemy
-{
-  float x, y;
-  
+{  
   Patriot()
   {
     this.x = 0;
@@ -13,7 +11,8 @@ class Patriot extends Enemy
     this.x = x;
     this.y = y;
     this.type = type;
-  
+    //this.p = p;
+    
     CreatePatriot();
   }
 }
