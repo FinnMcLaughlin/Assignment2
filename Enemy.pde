@@ -6,6 +6,7 @@ class Enemy
   int type, p;
   float x, y;
   float dir = 2;
+  boolean check;
   
   void CreateHive()                            //Create Hive
   {
@@ -178,6 +179,18 @@ class Enemy
    Guard.addChild(cockpit);
   }
   
+  void CreateBoss()
+  {
+    PShape Boss = createShape(GROUP);
+    PShape body = createShape(ELLIPSE, 250, 300, 40, 40);
+    PShape eye = createShape(ELLIPSE, 250, 325, 20, 20);
+    PShape pupil = createShape(ELLIPSE, 250, 325, 10, 10);
+    
+    Boss.addChild(body);
+    Boss.addChild(eye);
+    Boss.addChild(pupil);
+  }
+  
   
   void Render()
   {
@@ -204,8 +217,9 @@ class Enemy
           case 1: y = TopDown(y);
                   break;
           
-          case 2: y = ZigZag(x, y);
+          case 2: y = ZigZag(x, y, check);
                   break;
+          default: break;
         }
         
         if(y > height)
@@ -217,17 +231,21 @@ class Enemy
       else if(type == 2)
       {
 
-        y = ZigZag(x, y);
+        switch(p)
+        {
+          case 1: y = TopDown(y);
+                  break;
+          case 2: y = ZigZag(x, y, check);
+                  break;
+          default: break;
+        }
         
+        
+        //Bullet();
+    
         if( y > height )
         {
           Enemies.remove(this);
-        }
-        
-        if( frameCount % 30 == 0 )
-        {
-          EnemyBullet EB = new EnemyBullet(300, 500, 0);
-          EBullets.add(EB);
         }
       }
       
@@ -251,9 +269,15 @@ class Enemy
     return(ypos);
   }
   
-  float ZigZag(float xpos, float ypos)
+  float ZigZag(float xpos, float ypos, boolean c)
   { 
-    if(x > 400 || x < 0)
+    if(x > 250 && c == false)
+    {
+     dir = -dir;
+     c = true;
+    }
+    
+    if(x > 500 || x < -50)
     {
       dir = -dir;
     }

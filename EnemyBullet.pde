@@ -18,16 +18,11 @@ class EnemyBullet
   
   void Update()
   {
-    y = y + 2;
+    y = y + 5;
     
-    if(y > 500)
+    if(y > 650)
     {
       EBullets.remove(this);
     }
   }
-  
-  
-  
-  
-  
 }
