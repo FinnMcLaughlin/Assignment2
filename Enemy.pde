@@ -198,15 +198,15 @@ class Enemy
   
   void Render()
   {    
-    if(type == 1)
+    if(type == 1 && dead == false)
     {
       shape(Hive, x, y);
     }
-    if(type == 2)
+    if(type == 2 && dead == false)
     {
       shape(Patriot, x, y);
     }
-    if(type == 3)
+    if(type == 3 && dead == false)
     {
       shape(Guard, x, y);
     }

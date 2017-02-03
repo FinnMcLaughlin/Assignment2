@@ -100,7 +100,34 @@ class Player
        }
      }
      
-
+    /*int EBullsize = EBullets.size();
+    for(int i = EBullsize - 1; i >= 0; i--)
+    {
+       EnemyBullet EnBCheck = EBullets.get(i);
+       if(dist(EnBCheck.LBullet, EnBCheck.y, x, 650) < 50 || dist(EnBCheck.RBullet, EnBCheck.y, x, 650) < 50)
+       {
+         println("Hit");
+       }
+       else
+       {
+         println("Miss");
+       }  
+    }*/
+    
+    int Enemysize = Enemies.size();
+    for(int i = Enemysize - 1; i >= 0; i--)
+    {
+      Enemy EnCheck = Enemies.get(i);
+      
+      if( dist(EnCheck.x, EnCheck.y, x, 650) < 30 )
+      {
+        println("Hit");
+      }
+      else
+      {
+        println("Not Hit");
+      }
+    }
   
      
      if( frameCount % 30 == 0 )

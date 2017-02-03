@@ -1,6 +1,6 @@
 class PlayerBullet
 {
-  float RBullet, LBullet, y;
+  float RBullet, LBullet, y, rad;
   
   PlayerBullet(float RBullet, float LBullet, float y)
   {
@@ -28,12 +28,21 @@ class PlayerBullet
     int Enemysize = Enemies.size();
     for(int i = Enemysize - 1; i >= 0; i--)
     {
-      Enemy E = Enemies.get(i);
-      if( dist( E.x,E.y, RBullet, y) < 50)
+      Enemy EnCheck = Enemies.get(i);
+      
+      if(EnCheck.type == 4)
       {
-        Enemies.remove(this);
-        E.dead = true;
+        rad = 50;
       }
+      else
+      {
+        rad = 20;
+      }
+        if( dist( EnCheck.x,EnCheck.y, RBullet, y) < rad || dist( EnCheck.x, EnCheck.y, LBullet, y) < rad)
+        {
+          Enemies.remove(this);
+          EnCheck.dead = true;
+        }
     }
   }
  
