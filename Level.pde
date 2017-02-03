@@ -17,10 +17,10 @@ class Level
    // he gonna shoot you
    if(frameCount == 60)
    {
-     ESprite = new Guard(350, 250, 3, 0);
+     ESprite = new Boss(350, 250, 4, 0);
      Enemies.add(ESprite);
-     ESprite = new Guard(120, 250, 3, 0);
-     Enemies.add(ESprite);
+     //ESprite = new Guard(120, 250, 3, 0);
+     //Enemies.add(ESprite);
    }
  }
 }

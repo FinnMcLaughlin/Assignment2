@@ -3,6 +3,7 @@ class Enemy
   PShape Hive;
   PShape Guard;
   PShape Patriot;
+  PShape Boss;
   int type, p;
   float x, y, LBulpos, RBulpos;
   float dir = 2;
@@ -181,10 +182,13 @@ class Enemy
   
   void CreateBoss()
   {
-    PShape Boss = createShape(GROUP);
-    PShape body = createShape(ELLIPSE, 250, 300, 40, 40);
-    PShape eye = createShape(ELLIPSE, 250, 325, 20, 20);
-    PShape pupil = createShape(ELLIPSE, 250, 325, 10, 10);
+    Boss = createShape(GROUP);
+    fill(113, 66, 66);
+    PShape body = createShape(ELLIPSE, 100, 0, 150, 150);
+    fill(255);
+    PShape eye = createShape(ELLIPSE, 100, 20, 90, 70);
+    fill(120, 150, 230);
+    PShape pupil = createShape(ELLIPSE, 100, 20, 30, 30);
     
     Boss.addChild(body);
     Boss.addChild(eye);
@@ -205,6 +209,10 @@ class Enemy
     if(type == 3)
     {
       shape(Guard, x, y);
+    }
+    if(type == 4)
+    {
+      shape(Boss, x, y);
     }
   }
   
@@ -300,6 +308,7 @@ class Enemy
   
   float Bullet(float xpos, float ypos, int t)
   {
+    
     if(t == 2)
     {
       LBulpos = xpos + 62;

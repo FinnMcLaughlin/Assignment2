@@ -7,13 +7,12 @@ class EnemyBullet
     this.RBullet = RBullet;
     this.LBullet = LBullet;
     this.y = y;
-    this.t = t;
   }
   
   void Render()
   {
    stroke(250, 240, 20);
-   line(RBullet, y+5, RBullet,  y);
+   line(RBullet, y+5, RBullet,  y); 
    line(LBullet, y+5, LBullet, y);
   }
   
