@@ -15,13 +15,13 @@ class Level
   //float pos;
   //if young metro dont trust you
    // he gonna shoot you
-   if(frameCount % 90 == 0)
+   if(frameCount == 60)
    {
      float rand = random(100, 600);
-     ESprite = new Guard(-50, rand, 3, 3, false, 2);
+     ESprite = new Boss(310, 100, 4, 1, false);
      Enemies.add(ESprite);
-     ESprite = new Guard(650, rand, 3, 3, false, 1);
-     Enemies.add(ESprite);
+     //ESprite = new Guard(650, rand, 3, 3, false, 1);
+     //Enemies.add(ESprite);
    }
  }
 }
