@@ -16,19 +16,7 @@ class Patriot extends Enemy
     this.type = type;
     this.p = p;
     
-    this.LBulpos = this.x + 62;
-    this.RBulpos = this.x + 139;
-    
-    Bullet();
+
     CreatePatriot();
-  }
-  
-  void Bullet()
-  {
-    if( frameCount % 30 == 0 )
-    {
-       EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, 280);
-       EBullets.add(EB);
-    }
   }
 }

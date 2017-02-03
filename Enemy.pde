@@ -4,7 +4,7 @@ class Enemy
   PShape Guard;
   PShape Patriot;
   int type, p;
-  float x, y;
+  float x, y, LBulpos, RBulpos;
   float dir = 2;
   boolean check;
   
@@ -239,19 +239,29 @@ class Enemy
                   break;
           default: break;
         }
-        
-        
-        //Bullet();
+          
+          y = Bullet(x, y, type);
     
-        if( y > height )
-        {
-          Enemies.remove(this);
-        }
+          if( y > height )
+          {
+            Enemies.remove(this);
+          }
+        
       }
       
       else if(type == 3)
       {
-        x = x - 2;
+        //x = x - 2;
+        switch(p)
+        {
+          case 1: y = TopDown(y);
+                  break;
+          case 2: y = ZigZag(x, y, check);
+                  break;
+          default: break;
+        }
+        
+        y = Bullet(x, y, type);
         
         if(x < 0)
         {
@@ -286,5 +296,28 @@ class Enemy
     ypos = ypos + 2;
     
     return(ypos);
+  }
+  
+  float Bullet(float xpos, float ypos, int t)
+  {
+    if(t == 2)
+    {
+      LBulpos = xpos + 62;
+      RBulpos = xpos + 139;
+    }
+    else
+    {
+      LBulpos = xpos + 62;
+      RBulpos = xpos + 139;
+    }
+    
+    if( frameCount % 30 == 0 )
+    {
+            
+      EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, ypos + 60);
+      EBullets.add(EB);
+    }
+          
+     return(ypos);
   }
 }

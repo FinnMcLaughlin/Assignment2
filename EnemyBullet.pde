@@ -1,12 +1,13 @@
 class EnemyBullet
 {
-  float RBullet, LBullet, y;
+  float RBullet, LBullet, y, t;
   
   EnemyBullet(float RBullet, float LBullet, float y)
   {
     this.RBullet = RBullet;
     this.LBullet = LBullet;
     this.y = y;
+    this.t = t;
   }
   
   void Render()
@@ -18,9 +19,9 @@ class EnemyBullet
   
   void Update()
   {
-    y = y + 5;
+    y = y + 7;
     
-    if(y > 650)
+    if(y > 800)
     {
       EBullets.remove(this);
     }

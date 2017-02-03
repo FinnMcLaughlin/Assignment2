@@ -3,11 +3,13 @@ Player player1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
+boolean startCheck = false;
 
 void setup()
 {
   size(500, 650);
   player1 = new Player(225);
+  level = new Level(1);
 }
     
 void draw()
@@ -17,7 +19,10 @@ void draw()
   player1.Update();
   
   stroke(0);
-  level = new Level();
+  level.LevelStart();
+  startCheck = true;
+  
+  
   
   int Bullsize = PBullets.size();
   for(int i = Bullsize - 1; i >= 0; i--)
