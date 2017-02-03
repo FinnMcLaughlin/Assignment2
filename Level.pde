@@ -17,7 +17,7 @@ class Level
    // he gonna shoot you
    if(frameCount == 60)
    {
-     ESprite = new Boss(350, 250, 4, 0);
+     ESprite = new Boss(350, 250, 4, 0, false);
      Enemies.add(ESprite);
      //ESprite = new Guard(120, 250, 3, 0);
      //Enemies.add(ESprite);
@@ -33,8 +33,9 @@ class Level
               break;
       default: println("Error");
                break;
-   }
- }*/
+   }*/
+ 
+ 
 
              
    
@@ -108,7 +109,7 @@ class Level
              }
              
              lev = 2;
-           }
+           }*/
            
            /*if(frameCount == 400)
            {
@@ -122,10 +123,10 @@ class Level
              }
            }*/
            
-  /*        return(lev);
+   /*       return(lev);
   }
   
-  /*void Level2(int lev)
+  void Level2(int lev)
   {
              if(frameCount > 300)
              {

@@ -3,7 +3,7 @@ Player player1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-boolean startCheck = false;
+//ArrayList<Object_Dist> Dist = new ArrayList<Object_Dist>();
 
 void setup()
 {
@@ -20,7 +20,7 @@ void draw()
   
   stroke(0);
   level.LevelStart();
-  startCheck = true;
+
   
   
   

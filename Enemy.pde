@@ -7,7 +7,7 @@ class Enemy
   int type, p;
   float x, y, LBulpos, RBulpos;
   float dir = 2;
-  boolean check;
+  boolean check, dead;
   
   void CreateHive()                            //Create Hive
   {
@@ -197,7 +197,7 @@ class Enemy
   
   
   void Render()
-  {
+  {    
     if(type == 1)
     {
       shape(Hive, x, y);
@@ -210,7 +210,7 @@ class Enemy
     {
       shape(Guard, x, y);
     }
-    if(type == 4)
+    if(type == 4 && dead == false)
     {
       shape(Boss, x, y);
     }
@@ -276,6 +276,11 @@ class Enemy
           Enemies.remove(this);
         }
       }
+      else if(type == 4)
+      {
+        ZigZag(x, y, check);
+      }
+      
   }
   
   
@@ -289,7 +294,7 @@ class Enemy
   
   float ZigZag(float xpos, float ypos, boolean c)
   { 
-    if(x > 250 && c == false)
+    if(x > 700 && c == false)
     {
      dir = -dir;
      c = true;
@@ -322,7 +327,6 @@ class Enemy
     
     if( frameCount % 30 == 0 )
     {
-            
       EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, ypos + 60);
       EBullets.add(EB);
     }

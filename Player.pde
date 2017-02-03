@@ -74,7 +74,6 @@ class Player
       sprite.addChild(gun_r);
       sprite.addChild(engine);
       sprite.addChild(cockpit);
-      
    }
     
    void Render()
@@ -100,6 +99,9 @@ class Player
          gunrpos = gunrpos + 5;
        }
      }
+     
+
+  
      
      if( frameCount % 30 == 0 )
      {

@@ -24,5 +24,17 @@ class PlayerBullet
     {
       PBullets.remove(this);
     }
+    
+    int Enemysize = Enemies.size();
+    for(int i = Enemysize - 1; i >= 0; i--)
+    {
+      Enemy E = Enemies.get(i);
+      if( dist( E.x,E.y, RBullet, y) < 50)
+      {
+        Enemies.remove(this);
+        E.dead = true;
+      }
+    }
   }
+ 
 }
