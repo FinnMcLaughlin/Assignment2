@@ -3,12 +3,11 @@ Player player1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-//ArrayList<Object_Dist> Dist = new ArrayList<Object_Dist>();
 
 void setup()
 {
   size(500, 650);
-  player1 = new Player(225);
+  player1 = new Player(310);
   level = new Level(1);
 }
     
@@ -21,7 +20,8 @@ void draw()
   stroke(0);
   level.LevelStart();
 
-  
+  stroke(20, 100, 60);
+  line(110, 0, 110, 810);
   
   
   int Bullsize = PBullets.size();

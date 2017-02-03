@@ -15,16 +15,19 @@ class Level
   //float pos;
   //if young metro dont trust you
    // he gonna shoot you
-   /*if(frameCount == 60)
+   if(frameCount % 90 == 0)
    {
-     ESprite = new Boss(350, 250, 4, 0, false);
+     float rand = random(100, 600);
+     ESprite = new Guard(-50, rand, 3, 3, false, 2);
      Enemies.add(ESprite);
-     //ESprite = new Guard(120, 250, 3, 0);
-     //Enemies.add(ESprite);
-   }*/
+     ESprite = new Guard(650, rand, 3, 3, false, 1);
+     Enemies.add(ESprite);
+   }
+ }
+}
  
 
-   switch(level)
+   /*switch(level)
    {
       case 1: level = Level1(level);
               break;
@@ -33,8 +36,8 @@ class Level
               break;
       default: println("Error");
                break;
-   }
- }
+   }*/
+ 
  
  
 
@@ -55,7 +58,7 @@ class Level
    }*/
 
 
-  int Level1(int lev)
+  /*int Level1(int lev)
   {
     if(frameCount == 60)
              {
@@ -110,7 +113,7 @@ class Level
              }
              
              lev = 2;
-           }
+           }*/
            
            /*if(frameCount == 400)
            {
@@ -124,7 +127,7 @@ class Level
              }
            }*/
            
-        return(lev);
+        /*return(lev);
   }
   
   void Level2(int lev)
@@ -141,5 +144,4 @@ class Level
                  }
                }
              }
-  }
-}
+  }*/
