@@ -134,9 +134,9 @@ class Player
     {
     }
 
-    if ( frameCount % 30 == 0 )
+    if ( frameCount % 10 == 0 )
     {
-      PlayerBullet PB = new PlayerBullet(gunlpos, gunrpos, 725);
+      PlayerBullet PB = new PlayerBullet(gunlpos, gunrpos, 725, 3);
       PBullets.add(PB);
     }
   }

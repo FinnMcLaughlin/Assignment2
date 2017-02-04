@@ -273,8 +273,32 @@ class Level
   
   int Final(int lev)
   {
+    float pos;
     
+    if(frameCount == 3000)
+    {
+      ESprite = new Boss(310, 100, 4, 1, false);
+      Enemies.add(ESprite);
+    }
     
+    if(frameCount % 300 == 0 && frameCount > 3000)
+    {
+      pos = random(200, 600);
+      
+      for(int i=50; i < 300; i += 75)
+      {
+        ESprite = new Guard(-50-i, pos, 3, 3, false, -50);
+        Enemies.add(ESprite);
+      }
+      
+      pos = random(200, 600);
+      
+      for(int i=50; i < 300; i += 75)
+      {
+        ESprite = new Guard(650+i, pos, 3, 3, false, 650);
+        Enemies.add(ESprite);
+      }
+    }
     
     return(lev);
   }

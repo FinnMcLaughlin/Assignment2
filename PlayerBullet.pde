@@ -1,12 +1,13 @@
 class PlayerBullet
 {
-  float RBullet, LBullet, y, rad;
+  float RBullet, LBullet, y, BulLife;
 
-  PlayerBullet(float RBullet, float LBullet, float y)
+  PlayerBullet(float RBullet, float LBullet, float y, float BulLife)
   {
     this.RBullet = RBullet;
     this.LBullet = LBullet;
     this.y = y;
+    this.BulLife = BulLife;
   }
 
   void Render()
@@ -20,7 +21,7 @@ class PlayerBullet
   {
     y = y - 5;
 
-    if (y <= 0)
+    if (y <= 0 || BulLife <= 0)
     {
       PBullets.remove(this);
     }
@@ -30,16 +31,10 @@ class PlayerBullet
     {
       Enemy EnCheck = Enemies.get(i);
 
-      if (EnCheck.type == 4)
-      {
-        rad = 50;
-      } else
-      {
-        rad = 50;
-      }
-      if ( dist( EnCheck.x, EnCheck.y, RBullet, y) < rad || dist( EnCheck.x, EnCheck.y, LBullet, y) < rad)
+      if ( dist( EnCheck.x, EnCheck.y, RBullet, y) < 50 || dist( EnCheck.x, EnCheck.y, LBullet, y) < 50)
       {
         EnCheck.lives -= 1;
+        BulLife -= 1;
       }
     }
   }

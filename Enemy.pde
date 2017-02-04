@@ -237,14 +237,12 @@ class Enemy
         break;
       }
 
-      if (y > 820 || lives <= 0)
+      if (y > 820 || lives <= 12)
       {
         Enemies.remove(this);
         dead = true;
       }
-    } 
-    
-    else if (type == 2 && dead == false)
+    } else if (type == 2 && dead == false)
     {
 
       switch(p)
@@ -269,9 +267,7 @@ class Enemy
       {
         Enemies.remove(this);
       }
-    } 
-    
-    else if (type == 3 && dead == false)
+    } else if (type == 3 && dead == false)
     {
       //x = x - 2;
       switch(p)
@@ -292,15 +288,11 @@ class Enemy
         break;
       }
 
-      y = Bullet(x, y, type);
-
-      if (x < -100|| x > 750)
+      if (x < -500|| x > 1000)
       {
         Enemies.remove(this);
       }
-    } 
-    
-    else if (type == 4)
+    } else if (type == 4)
     {
       boss = Boss(x, boss);
     }
@@ -334,14 +326,15 @@ class Enemy
     return(ypos);
   }
 
-  void Guarding(float xpos, int start)
+  void Guarding(float xpos, float start)
   {
-    if (start == 1)
+    if (start > 310)
     {
-      dir = -dir;
+      x = xpos - dir;
+    } else
+    {
+      x = xpos + dir;
     }
-
-    x = xpos + dir;
   }
 
   float Corner(float xpos, float ypos)
@@ -401,21 +394,15 @@ class Enemy
   float Bullet(float xpos, float ypos, int t)
   {
     float ybulpos;
+    int rate;
+
+    LBulpos = xpos - 38.5;
+    RBulpos = xpos + 38.5;
+    ybulpos = ypos;
+    rate = 100;
 
 
-    if (t == 3)
-    {
-      LBulpos = xpos - 35;
-      RBulpos = xpos + 35;
-      ybulpos = ypos + 35;
-    } else
-    {
-      LBulpos = xpos - 38.5;
-      RBulpos = xpos + 38.5;
-      ybulpos = ypos;
-    }
-
-    if ( frameCount % 100 == 0 )
+    if ( frameCount % rate == 0 )
     {
       EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, ybulpos);
       EBullets.add(EB);
