@@ -43,7 +43,6 @@ void draw()
   }
 
   int Enemysize = Enemies.size();
-  println(Enemysize);
   for (int i = Enemysize - 1; i >= 0; i--)
   {
     Enemy E = Enemies.get(i);

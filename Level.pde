@@ -277,7 +277,7 @@ class Level
     
     if(frameCount == 3000)
     {
-      ESprite = new Boss(310, 100, 4, 1, false);
+      ESprite = new Boss(310, 100, 4, 1, 500, false);
       Enemies.add(ESprite);
     }
     
@@ -287,7 +287,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(-50-i, pos, 3, 3, false, -50);
+        ESprite = new Guard(-50-i, pos, 3, 3, 20, false, -50);
         Enemies.add(ESprite);
       }
       
@@ -295,7 +295,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(650+i, pos, 3, 3, false, 650);
+        ESprite = new Guard(650+i, pos, 3, 3, 20, false, 650);
         Enemies.add(ESprite);
       }
     }

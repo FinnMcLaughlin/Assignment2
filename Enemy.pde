@@ -266,35 +266,34 @@ class Enemy
       if ( y > 820 || lives <= 0)
       {
         Enemies.remove(this);
+        dead = true;
       }
     } else if (type == 3 && dead == false)
     {
-      //x = x - 2;
       switch(p)
       {
-      case 1: 
-        y = TopDown(y);
-        break;
-      case 2: 
-        y = ZigZag(x, y, check);
-        break;
       case 3: 
         Guarding(x, strtpos);
-        break;
-      case 4: 
-        y = Corner(x, y);
         break;
       default: 
         break;
       }
 
-      if (x < -500|| x > 1000)
+      if ( (x < -500 || x > 1000) || lives <= 0 )
       {
         Enemies.remove(this);
+        dead = true;
       }
-    } else if (type == 4)
+    } else if (type == 4 && dead == false)
     {
       boss = Boss(x, boss);
+      println(lives);
+      
+      if(lives <= 0)
+      {
+        Enemies.remove(this);
+        dead = true;
+      }
     }
   }
 
