@@ -7,7 +7,8 @@ class Enemy
   int type, p, strtpos;
   float x, y, LBulpos, RBulpos;
   float dir = 2;
-  boolean check, dead;
+  boolean check = false, dead;
+  color boss = color(90, 180, 235);
 
   void CreateHive()                            //Create Hive
   {
@@ -183,11 +184,11 @@ class Enemy
   void CreateBoss()
   {
     Boss = createShape(GROUP);
-    fill(113, 66, 66);
+    fill(113, 66 ,66);
     PShape body = createShape(ELLIPSE, 0, 0, 150, 150);
     fill(255);
     PShape eye = createShape(ELLIPSE, 0, 20, 90, 70);
-    fill(120, 150, 230);
+    fill(boss);
     PShape pupil = createShape(ELLIPSE, 0, 20, 30, 30);
 
     Boss.addChild(body);
@@ -283,7 +284,7 @@ class Enemy
       }
     } else if (type == 4)
     {
-      Boss(x);
+      boss = Boss(x, boss);
     }
   }
 
@@ -325,14 +326,33 @@ class Enemy
     x = xpos + dir;
   }
 
-  void Boss(float xpos)
-  {
+  color Boss(float xpos, color c)
+  { 
     if (xpos < 70 || xpos > 550 )
     {
       dir = -dir;
     }
-
-    x = xpos + dir;
+    
+    if(frameCount % 240 == 0)
+    {
+      c = color(255, 0, 0);
+      check = true;
+      laser = true;
+    }
+    else if(frameCount % 60 == 0)
+    {
+      check = false;
+      laser = false;
+    }
+    else if(check == false)
+    {
+      c = color(90, 130, 235);
+      x = xpos + dir;
+      laspos = x - 10;
+    }
+    
+    CreateBoss();
+    return(c);
   }
 
     float Bullet(float xpos, float ypos, int t)
