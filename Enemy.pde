@@ -4,7 +4,7 @@ class Enemy
   PShape Guard;
   PShape Patriot;
   PShape Boss;
-  int type, p, strtpos;
+  int type, p, strtpos, lives;
   float x, y, LBulpos, RBulpos;
   float dir = 2;
   boolean check = false, dead;
@@ -234,9 +234,10 @@ class Enemy
         break;
       }
 
-      if (y > 820)
+      if (y > 820 || lives <= 0)
       {
         Enemies.remove(this);
+        dead = true;
       }
     } else if (type == 2 && dead == false)
     {

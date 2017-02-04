@@ -36,12 +36,11 @@ class PlayerBullet
       }
       else
       {
-        rad = 20;
+        rad = 50;
       }
         if( dist( EnCheck.x,EnCheck.y, RBullet, y) < rad || dist( EnCheck.x, EnCheck.y, LBullet, y) < rad)
         {
-          Enemies.remove(this);
-          EnCheck.dead = true;
+          EnCheck.lives -= 1;
         }
     }
   }
