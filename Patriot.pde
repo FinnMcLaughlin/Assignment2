@@ -1,14 +1,14 @@
 class Patriot extends Enemy
 {
   float LBulpos, RBulpos;
-  
-  
+
+
   Patriot()
   {
     this.x = 0;
     this.y = -100;
   }
-  
+
   Patriot(float x, float y, int type, int p, boolean dead)
   {
     this.x = x;
@@ -16,7 +16,7 @@ class Patriot extends Enemy
     this.type = type;
     this.p = p;
     this.dead = dead;
-    
+
 
     CreatePatriot();
   }

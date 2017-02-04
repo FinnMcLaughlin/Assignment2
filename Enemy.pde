@@ -184,7 +184,7 @@ class Enemy
   void CreateBoss()
   {
     Boss = createShape(GROUP);
-    fill(113, 66 ,66);
+    fill(113, 66, 66);
     PShape body = createShape(ELLIPSE, 0, 0, 150, 150);
     fill(255);
     PShape eye = createShape(ELLIPSE, 0, 20, 90, 70);
@@ -230,6 +230,9 @@ class Enemy
       case 2: 
         y = ZigZag(x, y, check);
         break;
+      case 4: 
+        y = Corner(x, y);
+        break;
       default: 
         break;
       }
@@ -249,6 +252,10 @@ class Enemy
         break;
       case 2: 
         y = ZigZag(x, y, check);
+        break;
+      case 4: 
+        pos = random(50, 270);
+        y = Corner(x, y);
         break;
       default: 
         break;
@@ -273,6 +280,10 @@ class Enemy
         break;
       case 3: 
         Guarding(x, strtpos);
+        break;
+      case 4: 
+        y = Corner(x, y);
+        break;
       default: 
         break;
       }
@@ -327,58 +338,83 @@ class Enemy
     x = xpos + dir;
   }
 
+  float Corner(float xpos, float ypos)
+  {
+    if (xpos > 310)
+    {
+      if (xpos == 440)
+      {
+        ypos = ypos + 3;
+      } else
+      {
+        x = xpos - 2;
+        ypos = ypos + 3;
+      }
+    } else
+    {
+      if (xpos == 190)
+      {
+        ypos = ypos + 3;
+      } else
+      {
+        x = xpos + 2;
+        ypos = ypos + 3;
+      }
+    }
+
+    return(ypos);
+  }
+
   color Boss(float xpos, color c)
   { 
     if (xpos < 70 || xpos > 550 )
     {
       dir = -dir;
     }
-    
-    if(frameCount % 240 == 0)
+
+    if (frameCount % 240 == 0)
     {
       c = color(255, 0, 0);
       check = true;
       laser = true;
-    }
-    else if(frameCount % 60 == 0)
+    } else if (frameCount % 60 == 0)
     {
       check = false;
       laser = false;
-    }
-    else if(check == false)
+    } else if (check == false)
     {
       c = color(90, 130, 235);
       x = xpos + dir;
       laspos = x - 10;
     }
-    
+
     CreateBoss();
     return(c);
   }
 
-    float Bullet(float xpos, float ypos, int t)
+  float Bullet(float xpos, float ypos, int t)
+  {
+    float ybulpos;
+
+
+    if (t == 3)
     {
-      float ybulpos;
-
-
-      if (t == 3)
-      {
-        LBulpos = xpos - 35;
-        RBulpos = xpos + 35;
-        ybulpos = ypos + 35;
-      } else
-      {
-        LBulpos = xpos - 38.5;
-        RBulpos = xpos + 38.5;
-        ybulpos = ypos;
-      }
-
-      if ( frameCount % 30 == 0 )
-      {
-        EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, ybulpos);
-        EBullets.add(EB);
-      }
-
-      return(ypos);
+      LBulpos = xpos - 35;
+      RBulpos = xpos + 35;
+      ybulpos = ypos + 35;
+    } else
+    {
+      LBulpos = xpos - 38.5;
+      RBulpos = xpos + 38.5;
+      ybulpos = ypos;
     }
+
+    if ( frameCount % 100 == 0 )
+    {
+      EnemyBullet EB = new EnemyBullet(LBulpos, RBulpos, ybulpos);
+      EBullets.add(EB);
+    }
+
+    return(ypos);
   }
+}

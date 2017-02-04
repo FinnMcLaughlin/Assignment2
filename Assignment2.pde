@@ -4,7 +4,7 @@ ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 boolean laser = false;
-float laspos;
+float laspos, pos;
 
 void setup()
 {
@@ -23,7 +23,7 @@ void draw()
   level.LevelStart();
 
   stroke(20, 100, 60);
-  line(110, 0, 110, 725);
+  line(0, 300, 510, 300);
 
 
   int Bullsize = PBullets.size();
@@ -43,6 +43,7 @@ void draw()
   }
 
   int Enemysize = Enemies.size();
+  println(Enemysize);
   for (int i = Enemysize - 1; i >= 0; i--)
   {
     Enemy E = Enemies.get(i);
