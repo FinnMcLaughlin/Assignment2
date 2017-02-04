@@ -293,7 +293,7 @@ class Enemy
 
   float TopDown(float ypos)
   {
-    ypos = ypos + 2;
+    ypos = ypos + 3;
     return(ypos);
   }
 
@@ -305,13 +305,13 @@ class Enemy
       c = true;
     }
 
-    if (x > 500 || x < -50)
+    if (x < 50 || x > 590)
     {
       dir = -dir;
     }
 
     x = xpos + dir;
-    ypos = ypos + 2;
+    ypos = ypos + 3;
 
     return(ypos);
   }

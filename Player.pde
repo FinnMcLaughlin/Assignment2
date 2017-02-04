@@ -119,21 +119,29 @@ class Player
     {
       Enemy EnCheck = Enemies.get(i);
       
-      if( dist(EnCheck.x, EnCheck.y, x, 650) < 30 )
+      if( dist(EnCheck.x, EnCheck.y, x, 725) < 50 )
       {
         println("Hit");
       }
       else
       {
-        //println("Not Hit");
+        println("Not Hit");
       }
     }
   
-     
-     /*if( frameCount % 30 == 0 )
+    if( dist(laspos, 725, x, 725) < 50 && laser == true)
+    {
+      println("Hit");
+    }
+    else
+    {
+      
+    }
+    
+     if( frameCount % 30 == 0 )
      {
        PlayerBullet PB = new PlayerBullet(gunlpos, gunrpos, 725);
        PBullets.add(PB);
-     }*/
+     }
   }
 }

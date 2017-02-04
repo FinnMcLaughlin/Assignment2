@@ -20,7 +20,7 @@ class PlayerBullet
   {
     y = y - 5;
     
-    if(y < 0)
+    if(y <= 0)
     {
       PBullets.remove(this);
     }

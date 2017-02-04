@@ -23,7 +23,7 @@ void draw()
   level.LevelStart();
 
   stroke(20, 100, 60);
-  line(110, 0, 110, 810);
+  line(110, 0, 110, 725);
 
 
   int Bullsize = PBullets.size();
