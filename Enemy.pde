@@ -242,7 +242,9 @@ class Enemy
         Enemies.remove(this);
         dead = true;
       }
-    } else if (type == 2 && dead == false)
+    } 
+    
+    else if (type == 2 && dead == false)
     {
 
       switch(p)
@@ -263,11 +265,13 @@ class Enemy
 
       y = Bullet(x, y, type);
 
-      if ( y > height )
+      if ( y > 820 || lives <= 0)
       {
         Enemies.remove(this);
       }
-    } else if (type == 3 && dead == false)
+    } 
+    
+    else if (type == 3 && dead == false)
     {
       //x = x - 2;
       switch(p)
@@ -294,7 +298,9 @@ class Enemy
       {
         Enemies.remove(this);
       }
-    } else if (type == 4)
+    } 
+    
+    else if (type == 4)
     {
       boss = Boss(x, boss);
     }

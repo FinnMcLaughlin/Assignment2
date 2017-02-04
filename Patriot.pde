@@ -9,13 +9,14 @@ class Patriot extends Enemy
     this.y = -100;
   }
 
-  Patriot(float x, float y, int type, int p, boolean dead)
+  Patriot(float x, float y, int type, int p, int lives, boolean dead)
   {
     this.x = x;
     this.y = y;
     this.type = type;
     this.p = p;
     this.dead = dead;
+    this.lives = lives;
 
 
     CreatePatriot();
