@@ -266,7 +266,7 @@ class Enemy
         break;
       }
 
-      y = Bullet(x, y, type);
+      y = Bullet(x, y);
 
       if ( y > 820 || lives <= 0)
       {
@@ -405,7 +405,7 @@ class Enemy
     return(c);
   }
 
-  float Bullet(float xpos, float ypos, int t)
+  float Bullet(float xpos, float ypos)
   {
     float ybulpos;
     int rate;

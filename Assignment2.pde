@@ -73,13 +73,13 @@ void HUD()
   shipHealth = PLives * 10;
   
   textSize(20);
-  text("Score: ", 500, 760);
-  text(score, 580, 760);
+  text("Score: ", 450, 765);
+  text(score, 520, 765);
   
   fill(255);
-  rect(20, 750, 200, 20);
+  rect(20, 750, 150, 20);
   fill(0, 255, 0);
-  rect(20, 750, shipHealth*2, 20); 
+  rect(20, 750, shipHealth*1.5, 20); 
   
   if(L == 3)
   {
