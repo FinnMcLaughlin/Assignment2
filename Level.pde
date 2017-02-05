@@ -35,11 +35,11 @@ class Level
   {
     if (frameCount == 60)
     {
-      ESprite = new Hive(310, -30, 1, 1, 50, false);
+      ESprite = new Hive(310, -30, 1, 1, 50, false, false);
       Enemies.add(ESprite);
-      ESprite = new Hive(155, -70, 1, 1, 50, false);
+      ESprite = new Hive(155, -70, 1, 1, 50, false, false);
       Enemies.add(ESprite);
-      ESprite = new Hive(465, -70, 1, 1, 50, false);
+      ESprite = new Hive(465, -70, 1, 1, 50, false, false);
       Enemies.add(ESprite);
     }
 
@@ -47,7 +47,7 @@ class Level
     {
       for (int i=50; i < 625; i += 125)
       {
-        ESprite = new Hive(15+i, -30, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -30, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -56,17 +56,17 @@ class Level
     {
       for (int i=50; i < 375; i += 125)
       {
-        ESprite = new Hive(15+i, -50, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -50, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
       for (int i=50; i < 375; i += 125)
       {
-        ESprite = new Hive(265+i, -250, 1, 1, 50, false);
+        ESprite = new Hive(265+i, -250, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
       for (int i=50; i < 375; i += 125)
       {
-        ESprite = new Hive(15+i, -450, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -450, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -75,13 +75,13 @@ class Level
     {
       for (int i=50; i < 250; i += 125)
       {
-        ESprite = new Hive(15+i, -100, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -100, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 250; i += 125)
       {
-        ESprite = new Hive(390+i, -100, 1, 1, 50, false);
+        ESprite = new Hive(390+i, -100, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -90,7 +90,7 @@ class Level
     {
       for (int i=50; i < 850; i += 125)
       {
-        ESprite = new Hive(15+i, -50-i, 1, 2, 50, false);
+        ESprite = new Hive(15+i, -50-i, 1, 2, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -99,7 +99,7 @@ class Level
     {
       for (int i=50; i < 625; i += 125)
       {
-        ESprite = new Hive(15+i, -200, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -200, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -108,7 +108,7 @@ class Level
     {
       for (int i=50; i < 625; i += 125)
       {
-        ESprite = new Hive(15+i, -150, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -150, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -117,7 +117,7 @@ class Level
     {
       for (int i=50; i < 625; i += 125)
       {
-        ESprite = new Hive(15+i, -150, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -150, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
@@ -135,7 +135,7 @@ class Level
 
     if (frameCount == 1460)
     {
-      ESprite = new Patriot(310, -50, 2, 1, 30, false);
+      ESprite = new Patriot(310, -50, 2, 1, 30, false, false);
       Enemies.add(ESprite);
     }
 
@@ -143,7 +143,7 @@ class Level
     {
       for (int i=50; i < 850; i += 400)
       {
-        ESprite = new Patriot(60+i, -50, 2, 1, 30, false);
+        ESprite = new Patriot(60+i, -50, 2, 1, 30, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -152,7 +152,7 @@ class Level
     {
       for (int i=50; i < 625; i += 125)
       {
-        ESprite = new Hive(15+i, -200, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -200, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -161,19 +161,19 @@ class Level
     {
       for (int i=50; i < 250; i += 125)
       {
-        ESprite = new Hive(15+i, -100, 1, 1, 50, false);
+        ESprite = new Hive(15+i, -100, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 250; i += 125)
       {
-        ESprite = new Hive(390+i, -100, 1, 1, 50, false);
+        ESprite = new Hive(390+i, -100, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 1000; i += 250)
       {
-        ESprite = new Patriot(15+i, -250-i, 2, 2, 30, false);
+        ESprite = new Patriot(15+i, -250-i, 2, 2, 30, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -183,19 +183,19 @@ class Level
 
       for (int i=50; i < 600; i += 215)
       {
-        ESprite = new Hive(50+i, -50, 1, 1, 50, false);
+        ESprite = new Hive(50+i, -50, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 200; i += 100)
       {
-        ESprite = new Patriot(-100-i, -150-i, 2, 4, 30, false);
+        ESprite = new Patriot(-100-i, -150-i, 2, 4, 30, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 200; i += 100)
       {
-        ESprite = new Patriot(720+i, -150-i, 2, 4, 30, false);
+        ESprite = new Patriot(720+i, -150-i, 2, 4, 30, false, false);
         Enemies.add(ESprite);
       }
     }
@@ -204,29 +204,29 @@ class Level
     {
       for (int i=50; i < 600; i += 420)
       {
-        ESprite = new Hive(60+i, -50, 1, 1, 50, false);
+        ESprite = new Hive(60+i, -50, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
-      ESprite = new Patriot(315, -50, 2, 1, 30, false);
+      ESprite = new Patriot(315, -50, 2, 1, 30, false, false);
       Enemies.add(ESprite);
 
       for (int i=50; i < 600; i += 420)
       {
-        ESprite = new Patriot(50+i, -150, 2, 1, 30, false);
+        ESprite = new Patriot(50+i, -150, 2, 1, 30, false, false);
         Enemies.add(ESprite);
       }
 
-      ESprite = new Hive(320, -150, 1, 1, 150, false);
+      ESprite = new Hive(320, -150, 1, 1, 150, false, false);
       Enemies.add(ESprite);
 
       for (int i=50; i < 600; i += 420)
       {
-        ESprite = new Hive(60+i, -250, 1, 1, 50, false);
+        ESprite = new Hive(60+i, -250, 1, 1, 50, false, false);
         Enemies.add(ESprite);
       }
 
-      ESprite = new Patriot(315, -250, 2, 1, 30, false);
+      ESprite = new Patriot(315, -250, 2, 1, 30, false, false);
       Enemies.add(ESprite);
     }
 
@@ -234,21 +234,21 @@ class Level
     {
       for (int i=50; i < 400; i += 100)
       {
-        ESprite = new Hive(-100-i, -150-i, 1, 4, 50, false);
+        ESprite = new Hive(-100-i, -150-i, 1, 4, 50, false, false);
         Enemies.add(ESprite);
       }
 
       for (int i=50; i < 400; i += 100)
       {
-        ESprite = new Hive(720+i, -150-i, 1, 4, 50, false);
+        ESprite = new Hive(720+i, -150-i, 1, 4, 50, false, false);
         Enemies.add(ESprite);
       }
 
-      ESprite = new Patriot(310, -550, 2, 1, 30, false);
+      ESprite = new Patriot(310, -550, 2, 1, 30, false, false);
       Enemies.add(ESprite);
-      ESprite = new Patriot(155, -600, 2, 1, 30, false);
+      ESprite = new Patriot(155, -600, 2, 1, 30, false, false);
       Enemies.add(ESprite);
-      ESprite = new Patriot(465, -600, 2, 1, 30, false);
+      ESprite = new Patriot(465, -600, 2, 1, 30, false, false);
       Enemies.add(ESprite);
 
       lev = 3;
@@ -274,7 +274,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(-50-i, pos, 3, 3, 20, false, -50);
+        ESprite = new Guard(-50-i, pos, 3, 3, 20, false, false, -50);
         Enemies.add(ESprite);
       }
       
@@ -282,7 +282,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(650+i, pos, 3, 3, 20, false, 650);
+        ESprite = new Guard(650+i, pos, 3, 3, 20, false, false, 650);
         Enemies.add(ESprite);
       }
     }

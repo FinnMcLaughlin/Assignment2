@@ -34,6 +34,7 @@ class PlayerBullet
       if ( dist( EnCheck.x, EnCheck.y, RBullet, y) < 50 || dist( EnCheck.x, EnCheck.y, LBullet, y) < 50)
       {
         EnCheck.lives -= 1;
+        EnCheck.shot = true;
         BulLife -= 1;
       }
     }

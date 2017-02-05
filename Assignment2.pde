@@ -5,7 +5,7 @@ ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 boolean laser = false, gameOver = false;
 float laspos, pos;
-int PLives, BLife, L;
+int PLives, BLife, L, score = 0;
 
 void setup()
 {
@@ -71,6 +71,10 @@ void HUD()
   int shipHealth;
   
   shipHealth = PLives * 10;
+  
+  textSize(20);
+  text("Score: ", 500, 760);
+  text(score, 580, 760);
   
   fill(255);
   rect(20, 750, 200, 20);

@@ -6,7 +6,7 @@ class Guard extends Enemy
     this.y = -100;
   }
 
-  Guard(float x, float y, int type, int p, int lives, boolean dead, int strtpos)
+  Guard(float x, float y, int type, int p, int lives, boolean dead, boolean shot, int strtpos)
   {
     this.x = x;
     this.y = y;
@@ -14,6 +14,7 @@ class Guard extends Enemy
     this.p = p;
     this.lives = lives;
     this.dead = dead;
+    this.shot = shot;
     this.strtpos = strtpos;
 
     CreateGuard();

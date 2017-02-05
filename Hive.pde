@@ -6,7 +6,7 @@ class Hive extends Enemy
     this.y = -100;
   }
 
-  Hive(float x, float y, int type, int p, int lives, boolean dead)
+  Hive(float x, float y, int type, int p, int lives, boolean dead, boolean shot)
   {
     this.x = x;
     this.y = y;
@@ -14,6 +14,7 @@ class Hive extends Enemy
     this.p = p;
     this.lives = lives;
     this.dead = dead;
+    this.shot = shot;
 
     CreateHive();
   }

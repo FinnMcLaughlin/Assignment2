@@ -7,7 +7,7 @@ class Enemy
   int type, p, strtpos, lives;
   float x, y, LBulpos, RBulpos;
   float dir = 2;
-  boolean check = false, dead;
+  boolean check = false, dead, shot;
   color boss = color(90, 180, 235);
 
   void CreateHive()                            //Create Hive
@@ -242,6 +242,10 @@ class Enemy
       {
         Enemies.remove(this);
         dead = true;
+        if(shot == true)
+        {
+          score += 100;
+        }
       }
     } else if (type == 2 && dead == false)
     {
@@ -268,6 +272,10 @@ class Enemy
       {
         Enemies.remove(this);
         dead = true;
+        if(shot == true)
+        {
+          score += 200;
+        }
       }
     } else if (type == 3 && dead == false)
     {
@@ -284,6 +292,10 @@ class Enemy
       {
         Enemies.remove(this);
         dead = true;
+        if(shot == true)
+        {
+          score += 50;
+        }
       }
     } else if (type == 4 && dead == false)
     {
@@ -293,6 +305,7 @@ class Enemy
       {
         Enemies.remove(this);
         dead = true;
+        score += 1000;
       }
       
       BLife = lives;
