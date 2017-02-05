@@ -264,13 +264,13 @@ class Level
     
     if(frameCount == 3000)
     {
-      ESprite = new Boss(310, 100, 4, 1, 500, false);
+      ESprite = new Boss(310, 125, 4, 1, 500, false);
       Enemies.add(ESprite);
     }
     
     if(frameCount % 300 == 0 && frameCount > 3000)
     {
-      pos = random(200, 600);
+      pos = random(225, 600);
       
       for(int i=50; i < 300; i += 75)
       {
@@ -278,7 +278,7 @@ class Level
         Enemies.add(ESprite);
       }
       
-      pos = random(200, 600);
+      pos = random(225, 600);
       
       for(int i=50; i < 300; i += 75)
       {

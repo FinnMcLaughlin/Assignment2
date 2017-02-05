@@ -54,7 +54,7 @@ void draw()
   if (laser == true)
   {
     stroke(255, 0, 0);
-    rect(laspos, 120, 20, 700);
+    rect(laspos, 145, 20, 700);
   }
   
   if(gameOver == true)
