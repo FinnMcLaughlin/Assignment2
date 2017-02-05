@@ -184,6 +184,7 @@ class Enemy
   void CreateBoss()
   {
     Boss = createShape(GROUP);
+    stroke(0);
     fill(113, 66, 66);
     PShape body = createShape(ELLIPSE, 0, 0, 150, 150);
     fill(255);
@@ -287,7 +288,6 @@ class Enemy
     } else if (type == 4 && dead == false)
     {
       boss = Boss(x, boss);
-      println(lives);
       
       if(lives <= 0)
       {

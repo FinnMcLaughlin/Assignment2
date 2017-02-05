@@ -1,13 +1,15 @@
 class Player
 {   
-  int x;
+  int x, lives;
   float gunlpos = 265;
   float gunrpos = 355;
+  boolean regen = false;
   PShape sprite;
 
-  Player(int x)
+  Player(int x, int lives)
   {
     this.x = x;
+    this.lives = lives;
     Create();
   }
 
@@ -104,12 +106,10 @@ class Player
     for (int i = EBullsize - 1; i >= 0; i--)
     {
       EnemyBullet EnBCheck = EBullets.get(i);
-      if (dist(EnBCheck.LBullet, EnBCheck.y, x, 650) < 30 || dist(EnBCheck.RBullet, EnBCheck.y, x, 650) < 30)
+      if ( (dist(EnBCheck.LBullet, EnBCheck.y, x, 650) < 30 || dist(EnBCheck.RBullet, EnBCheck.y, x, 650) < 30) && regen == false)
       {
-        println("Hit");
-      } else
-      {
-        //println(x);
+        lives -= 1;
+        regen = true;
       }
     }
 
@@ -118,26 +118,37 @@ class Player
     {
       Enemy EnCheck = Enemies.get(i);
 
-      if ( dist(EnCheck.x, EnCheck.y, x, 725) < 50 )
+      if ( dist(EnCheck.x, EnCheck.y, x, 725) < 50 && regen == false)
       {
-        println("Hit");
-      } else
-      {
-        //println("Not Hit");
+        lives -= 1;
+        regen = true;
       }
     }
 
-    if ( dist(laspos, 725, x, 725) < 50 && laser == true)
+    if ( dist(laspos, 725, x, 725) < 50 && laser == true && regen == false)
     {
-      println("Hit");
-    } else
-    {
+      lives -= 1;
+      println(lives);
+      regen = true;
     }
 
     if ( frameCount % 10 == 0 )
     {
       PlayerBullet PB = new PlayerBullet(gunlpos, gunrpos, 725, 3);
       PBullets.add(PB);
+    }
+    
+    if(lives <= 0)
+    {
+      gameOver = true;
+    }
+    
+    if(regen == true)
+    {
+      if(frameCount % 60 == 0)
+      {
+        regen = false;
+      }
     }
   }
 }

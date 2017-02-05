@@ -3,13 +3,13 @@ Player player1;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-boolean laser = false;
+boolean laser = false, gameOver = false;
 float laspos, pos;
 
 void setup()
 {
   size(500, 650);
-  player1 = new Player(310);
+  player1 = new Player(310, 5);
   level = new Level(1);
 }
 
@@ -22,7 +22,7 @@ void draw()
   stroke(0);
   level.LevelStart();
 
-  stroke(20, 100, 60);
+  //stroke(20, 100, 60);
   line(0, 300, 510, 300);
 
 
@@ -54,5 +54,11 @@ void draw()
   {
     stroke(255, 0, 0);
     rect(laspos, 120, 20, 700);
+  }
+  
+  if(gameOver == true)
+  {
+    println("GAME OVER");
+    delay(100);
   }
 }
