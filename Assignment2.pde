@@ -5,11 +5,12 @@ ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 boolean laser = false, gameOver = false;
 float laspos, pos;
+int PLives, BLife, L;
 
 void setup()
 {
   size(500, 650);
-  player1 = new Player(310, 5);
+  player1 = new Player(310, 10);
   level = new Level(1);
 }
 
@@ -59,6 +60,31 @@ void draw()
   if(gameOver == true)
   {
     println("GAME OVER");
-    delay(100);
+    //delay(1000);
   }
+  
+  HUD();
+}
+
+void HUD()
+{
+  int shipHealth;
+  
+  shipHealth = PLives * 10;
+  
+  fill(255);
+  rect(20, 750, 200, 20);
+  fill(0, 255, 0);
+  rect(20, 750, shipHealth*2, 20); 
+  
+  if(L == 3)
+  {
+    if(frameCount > 3000)
+    {
+      fill(255);
+      rect(50, 20, 500, 20);
+      fill(150, 0, 0);
+      rect(50, 20, BLife, 20);
+    }
+  }    
 }

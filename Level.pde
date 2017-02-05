@@ -12,21 +12,6 @@ class Level
 
   void LevelStart()
   {
-    //float pos;
-    //if young metro dont trust you
-    // he gonna shoot you
-    /*if(frameCount == 60)
-     {
-     float rand = random(100, 600);
-     ESprite = new Boss(310, 100, 4, 1, false);
-     Enemies.add(ESprite);
-     //ESprite = new Guard(650, rand, 3, 3, false, 1);
-     //Enemies.add(ESprite);
-     }*/
-
-
-
-
     switch(level)
     {
     case 1: 
@@ -41,6 +26,8 @@ class Level
     default: 
       break;
     }
+    
+    L = level;
   }
 
 

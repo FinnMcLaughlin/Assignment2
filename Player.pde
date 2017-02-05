@@ -106,7 +106,7 @@ class Player
     for (int i = EBullsize - 1; i >= 0; i--)
     {
       EnemyBullet EnBCheck = EBullets.get(i);
-      if ( (dist(EnBCheck.LBullet, EnBCheck.y, x, 650) < 30 || dist(EnBCheck.RBullet, EnBCheck.y, x, 650) < 30) && regen == false)
+      if ( (dist(EnBCheck.LBullet, EnBCheck.y, x, 650) < 40 || dist(EnBCheck.RBullet, EnBCheck.y, x, 650) < 40) && regen == false)
       {
         lives -= 1;
         regen = true;
@@ -150,5 +150,7 @@ class Player
         regen = false;
       }
     }
+    
+    PLives = lives;
   }
 }

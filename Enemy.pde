@@ -294,6 +294,8 @@ class Enemy
         Enemies.remove(this);
         dead = true;
       }
+      
+      BLife = lives;
     }
   }
 
