@@ -262,6 +262,12 @@ class Level
   {
     float pos;
     
+    if(frameCount > 2750 && frameCount < 2999)
+    {
+      stroke(255);
+      textSize(40);
+      text("Final Level", 275,  310);
+    }
     if(frameCount == 3000)
     {
       ESprite = new Boss(310, 125, 4, 1, 500, false);
