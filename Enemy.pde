@@ -46,6 +46,7 @@ class Enemy
     rightwing.vertex(15, 35);
     rightwing.endShape(CLOSE);
 
+    fill(255);
     PShape cockpit = createShape();
     cockpit.beginShape();
     cockpit.vertex(-20, 5);
@@ -115,6 +116,7 @@ class Enemy
     rightgun.vertex(43, 15);
     rightgun.endShape(CLOSE);
 
+    fill(255);
     PShape cockpit = createShape(ELLIPSE, 0, 10, 10, 30);
 
     Patriot.addChild(body);
