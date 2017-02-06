@@ -12,7 +12,7 @@ void setup()
 {
   size(500, 650);
   player1 = new Player(310, 10);
-  start = new Menu(false);
+  start = new Menu(true);
   level = new Level(1);
 }
 
