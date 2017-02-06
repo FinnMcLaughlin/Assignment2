@@ -102,3 +102,11 @@ void HUD()
     }
   }    
 }
+
+  void mouseClicked()
+  {
+    if( (mouseX > 200 && mouseX < 300) && (mouseY > 275 && mouseY < 300) && start.menu == true )
+    {
+      start.menu = false;
+    }
+  }
