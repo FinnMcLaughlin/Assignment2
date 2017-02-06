@@ -82,10 +82,12 @@ void HUD()
   
   shipHealth = PLives * 10;
   
+  stroke(0, 255, 0);
   textSize(20);
-  text("Score: ", 450, 765);
-  text(score, 520, 765);
+  text("Score:", 450, 765);
+  text(score, 530, 765);
   
+  stroke(0);
   fill(255);
   rect(20, 750, 150, 20);
   fill(0, 255, 0);
@@ -95,6 +97,7 @@ void HUD()
   {
     if(frameCount > 3000)
     {
+      stroke(0);
       fill(255);
       rect(50, 20, 500, 20);
       fill(150, 0, 0);
