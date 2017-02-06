@@ -274,7 +274,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(-50-i, pos, 3, 3, 20, false, false, -50);
+        ESprite = new Guard(-50-i, pos, 3, 3, 15, false, false, -50);
         Enemies.add(ESprite);
       }
       
@@ -282,7 +282,7 @@ class Level
       
       for(int i=50; i < 300; i += 75)
       {
-        ESprite = new Guard(650+i, pos, 3, 3, 20, false, false, 650);
+        ESprite = new Guard(650+i, pos, 3, 3, 15, false, false, 650);
         Enemies.add(ESprite);
       }
     }

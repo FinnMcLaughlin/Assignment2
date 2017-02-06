@@ -1,5 +1,6 @@
 Level level;
 Player player1;
+Menu start;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
@@ -11,59 +12,68 @@ void setup()
 {
   size(500, 650);
   player1 = new Player(310, 10);
+  start = new Menu(false);
   level = new Level(1);
 }
 
 void draw()
 {
-  background(0);
-  player1.Render();
-  player1.Update();
-
-  stroke(0);
-  level.LevelStart();
-
-  //stroke(20, 100, 60);
-  line(0, 300, 510, 300);
-
-
-  int Bullsize = PBullets.size();
-  for (int i = Bullsize - 1; i >= 0; i--)
+  if(start.menu == true)
   {
-    PlayerBullet PB = PBullets.get(i);
-    PB.Update();
-    PB.Render();
+     background(0);
+     start.MenuStart();
   }
-
-  int EBullsize = EBullets.size();
-  for (int i = EBullsize - 1; i >= 0; i--)
+  else
   {
-    EnemyBullet EB = EBullets.get(i);
-    EB.Update();
-    EB.Render();
-  }
-
-  int Enemysize = Enemies.size();
-  for (int i = Enemysize - 1; i >= 0; i--)
-  {
-    Enemy E = Enemies.get(i);
-    E.Update();
-    E.Render();
-  }
-
-  if (laser == true)
-  {
-    stroke(255, 0, 0);
-    rect(laspos, 145, 20, 700);
-  }
+    background(0);
+    player1.Render();
+    player1.Update();
   
-  if(gameOver == true)
-  {
-    println("GAME OVER");
-    //delay(1000);
-  }
+    stroke(0);
+    level.LevelStart();
   
-  HUD();
+    //stroke(20, 100, 60);
+    line(0, 300, 510, 300);
+  
+  
+    int Bullsize = PBullets.size();
+    for (int i = Bullsize - 1; i >= 0; i--)
+    {
+      PlayerBullet PB = PBullets.get(i);
+      PB.Update();
+      PB.Render();
+    }
+  
+    int EBullsize = EBullets.size();
+    for (int i = EBullsize - 1; i >= 0; i--)
+    {
+      EnemyBullet EB = EBullets.get(i);
+      EB.Update();
+      EB.Render();
+    }
+  
+    int Enemysize = Enemies.size();
+    for (int i = Enemysize - 1; i >= 0; i--)
+    {
+      Enemy E = Enemies.get(i);
+      E.Update();
+      E.Render();
+    }
+  
+    if (laser == true)
+    {
+      stroke(255, 0, 0);
+      rect(laspos, 145, 20, 700);
+    }
+    
+    if(gameOver == true)
+    {
+      println("GAME OVER");
+      //delay(1000);
+    }
+    
+    HUD();
+  }
 }
 
 void HUD()
