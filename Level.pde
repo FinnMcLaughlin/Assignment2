@@ -3,6 +3,7 @@ Enemy ESprite;
 class Level
 {
   int level;
+  boolean levcheck = true;
   //Enemy ESprite;
 
   Level(int level)
@@ -33,6 +34,14 @@ class Level
 
   int Level1(int lev)
   {
+    if(levcheck == true)
+    {
+      fill(255);
+      textSize(30);
+      text("Level 1", 250, 310);
+      fill(0, 255, 0);
+    }
+    
     if (frameCount == 60)
     {
       ESprite = new Hive(310, -30, 1, 1, 50, false, false);
@@ -45,6 +54,7 @@ class Level
 
     if (frameCount == 180)
     {
+      levcheck = false;
       for (int i=50; i < 625; i += 125)
       {
         ESprite = new Hive(15+i, -30, 1, 1, 50, false, false);
@@ -128,15 +138,24 @@ class Level
 
   int Level2(int lev)
   {
-    if (frameCount == 1400)
+    if(frameCount == 1350)
     {
-      println("LEVEL 2");
+      levcheck = true;
+    }
+    
+    if(levcheck == true)
+    {
+      fill(255);
+      textSize(30);
+      text("Level 2", 250, 310);
+      fill(0, 255, 0);
     }
 
     if (frameCount == 1460)
     {
       ESprite = new Patriot(310, -50, 2, 1, 30, false, false);
       Enemies.add(ESprite);
+      levcheck = false;
     }
 
     if (frameCount == 1580)
@@ -262,12 +281,24 @@ class Level
   {
     float pos;
     
-    if(frameCount > 2750 && frameCount < 2999)
+    if(frameCount == 2900)
     {
-      stroke(255);
-      textSize(40);
-      text("Final Level", 275,  310);
+      levcheck = true;
     }
+    
+    if(levcheck == true)
+    {
+      fill(255);
+      textSize(30);
+      text("Final Level", 230, 310);
+      fill(0, 255, 0);
+    }
+    
+    if(frameCount == 2960)
+    {
+      levcheck = false;
+    }
+    
     if(frameCount == 3000)
     {
       ESprite = new Boss(310, 125, 4, 1, 500, false);
