@@ -13,14 +13,14 @@ class Menu
   }
   
   void MenuStart()
-  {
+  { 
     textFont(MFont);
     text("UMIDIUM", 80, 200);
     shape(line, 90, 205);
     
     textSize(35);
     text("Start", 200, 300);
-    text("Options", 180, 350);
+    text("Quit", 210, 350);
   }
   
   void CreateLine()

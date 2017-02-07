@@ -303,7 +303,7 @@ class Level
     
     if(frameCount == 3000)
     {
-      ESprite = new Boss(310, 125, 4, 1, 5, false);
+      ESprite = new Boss(310, 125, 4, 1, 500, false);
       Enemies.add(ESprite);
     }
     

@@ -1,12 +1,15 @@
+import processing.sound.*;
+
 Level level;
 Player player1;
 Menu start;
 GameOver over;
+SoundFile Menu, Main;
 
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-boolean laser = false, gameOver = false, win = false;
+boolean laser = false, gameOver = false, win = false, menuMusic = true, mainMusic = false;
 float laspos, pos;
 int PLives, BLife, L, score = 0;
 
@@ -16,6 +19,9 @@ void setup()
   player1 = new Player(310, 10);
   start = new Menu(true);
   level = new Level(4);
+  
+  Menu = new SoundFile(this, "Menu.mp3");
+  Main = new SoundFile(this, "Main.mp3");
 }
 
 void draw()
@@ -68,12 +74,28 @@ void draw()
       rect(laspos, 145, 20, 700);
     }
     
+
+    
     HUD();
   }
   else if(gameOver == true)
   {
     over = new GameOver(score);
   }
+  
+    if(menuMusic == true)
+    {
+      Main.stop();
+      Menu.loop();
+      menuMusic = false;
+    }
+    else if(mainMusic == true)
+    {
+      Menu.stop();
+      Main.cue(37);
+      Main.loop();
+      mainMusic = false;
+    }
 }
 
 void HUD()
@@ -111,17 +133,29 @@ void HUD()
     if( (mouseX > 200 && mouseX < 300) && (mouseY > 275 && mouseY < 300) && start.menu == true )
     {
       start.menu = false;
+      menuMusic = false;
+      mainMusic = true;
     }
+    
+    if( (mouseX > 210 && mouseX < 290) && (mouseY > 325 && mouseY < 350) && start.menu == true )
+    {
+      exit();
+    }
+    
     if( (mouseX > 125 && mouseX < 365) && (mouseY > 320 && mouseY < 350) && gameOver == true && win == false)
     {
       start.menu = true;
       gameOver = false;
+      mainMusic = false;
+      menuMusic = true;
       win = false;
     }
     else if( (mouseX > 125 && mouseX < 365) && (mouseY > 370 && mouseY < 410) && gameOver == true && win == true)
     {
       start.menu = true;
       gameOver = false;
+      mainMusic = false;
+      menuMusic = true;
       win = false;
     }
   }
