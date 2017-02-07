@@ -25,7 +25,7 @@ void draw()
      background(0);
      start.MenuStart();
   }
-  else
+  else if(gameOver == false)
   {
     background(0);
     player1.Render();
@@ -68,12 +68,11 @@ void draw()
       rect(laspos, 145, 20, 700);
     }
     
-    if(gameOver == true)
-    {
-      over = new GameOver(score);
-    }
-    
     HUD();
+  }
+  else if(gameOver == true)
+  {
+    over = new GameOver(score);
   }
 }
 

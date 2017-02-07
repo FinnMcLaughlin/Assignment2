@@ -12,7 +12,9 @@ class GameOver
   
   void GameOverScreen(int s)
   {
+    stroke(255);
     textSize(60);
-    text(s, 200, 300);
+    text("Score", 125, 250);
+    text(s, 150, 300);
   }
 }
