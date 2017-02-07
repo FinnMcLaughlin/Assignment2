@@ -4,7 +4,6 @@ class Level
 {
   int level;
   boolean levcheck = true;
-  //Enemy ESprite;
 
   Level(int level)
   {
@@ -293,7 +292,7 @@ class Level
     {
       fill(255);
       textSize(30);
-      text("Final Level", 230, 310);
+      text("Final Level", 225, 310);
       fill(0, 255, 0);
     }
     

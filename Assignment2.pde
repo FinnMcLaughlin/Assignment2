@@ -1,6 +1,8 @@
 Level level;
 Player player1;
 Menu start;
+GameOver over;
+
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
@@ -68,8 +70,7 @@ void draw()
     
     if(gameOver == true)
     {
-      println("GAME OVER");
-      //delay(1000);
+      over = new GameOver(score);
     }
     
     HUD();
