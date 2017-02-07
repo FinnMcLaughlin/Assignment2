@@ -112,4 +112,9 @@ void HUD()
     {
       start.menu = false;
     }
+    if( (mouseX > 125 && mouseX < 365) && (mouseY > 320 && mouseY < 350) && gameOver == true)
+    {
+      start.menu = true;
+      gameOver = false;
+    }
   }
