@@ -24,7 +24,10 @@ class Level
       break;
     case 3:
       level = Final(level);
-    default: 
+      break;
+    case 4:       
+      frameCount = 0;
+      level = 1;
       break;
     }
     
@@ -33,7 +36,7 @@ class Level
 
 
   int Level1(int lev)
-  {
+  {    
     if(levcheck == true)
     {
       fill(255);
@@ -44,6 +47,7 @@ class Level
     
     if (frameCount == 60)
     {
+      levcheck = false;
       ESprite = new Hive(310, -30, 1, 1, 50, false, false);
       Enemies.add(ESprite);
       ESprite = new Hive(155, -70, 1, 1, 50, false, false);
@@ -54,7 +58,6 @@ class Level
 
     if (frameCount == 180)
     {
-      levcheck = false;
       for (int i=50; i < 625; i += 125)
       {
         ESprite = new Hive(15+i, -30, 1, 1, 50, false, false);

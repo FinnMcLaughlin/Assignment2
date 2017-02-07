@@ -11,7 +11,7 @@ class EnemyBullet
 
   void Render()
   {
-    stroke(250, 240, 20);
+    stroke(255);
     line(RBullet, y+5, RBullet, y); 
     line(LBullet, y+5, LBullet, y);
   }

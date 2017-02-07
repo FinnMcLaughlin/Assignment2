@@ -13,7 +13,7 @@ void setup()
   size(500, 650);
   player1 = new Player(310, 10);
   start = new Menu(true);
-  level = new Level(1);
+  level = new Level(4);
 }
 
 void draw()
