@@ -6,7 +6,7 @@ GameOver over;
 ArrayList<PlayerBullet> PBullets = new ArrayList<PlayerBullet>();
 ArrayList<EnemyBullet> EBullets = new ArrayList<EnemyBullet>();
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
-boolean laser = false, gameOver = false;
+boolean laser = false, gameOver = false, win = false;
 float laspos, pos;
 int PLives, BLife, L, score = 0;
 
@@ -112,9 +112,16 @@ void HUD()
     {
       start.menu = false;
     }
-    if( (mouseX > 125 && mouseX < 365) && (mouseY > 320 && mouseY < 350) && gameOver == true)
+    if( (mouseX > 125 && mouseX < 365) && (mouseY > 320 && mouseY < 350) && gameOver == true && win == false)
     {
       start.menu = true;
       gameOver = false;
+      win = false;
+    }
+    else if( (mouseX > 125 && mouseX < 365) && (mouseY > 370 && mouseY < 410) && gameOver == true && win == true)
+    {
+      start.menu = true;
+      gameOver = false;
+      win = false;
     }
   }

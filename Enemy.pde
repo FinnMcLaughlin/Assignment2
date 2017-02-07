@@ -308,6 +308,8 @@ class Enemy
         Enemies.remove(this);
         dead = true;
         score += 1000;
+        win = true;
+        gameOver = true;
       }
       
       BLife = lives;
