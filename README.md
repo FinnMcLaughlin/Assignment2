@@ -2,6 +2,8 @@
 
 Umidium is a "shoot 'em up" game where the player takes control of the ship of the same name. As the last ship in it's squadron, the player must fight through waves of enemy ships in attempt to take down 'The Eye', leader of the Shroud army. 
 
+[![Video](http://img.youtube.com/vi/0_u3XifTDO0/0.jpg)](https://www.youtube.com/watch?v=0_u3XifTDO0)
+
 The game features 2 levels, each featuring multiple waves of enemies, and a final boss level, where the player goes up against 'The Eye'
 
 ##Level 1
