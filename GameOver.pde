@@ -25,6 +25,7 @@ class GameOver
     } 
     else
     {
+      fill(0, 255, 0);
       textSize(60);
       text("Score", 140, 250);
       text(s, 175, 300);
