@@ -21,8 +21,9 @@ class PlayerBullet
   {
     y = y - 5;
 
-    if (y <= 0 || BulLife <= 0)
-    {
+    
+    if (y <= 0 || BulLife <= 0)//If Bullet Life is less than 0 or bullet goes off screen
+    {                           //Remove Bullet from Playe Bullet array
       PBullets.remove(this);
     }
 
@@ -30,12 +31,12 @@ class PlayerBullet
     for (int i = Enemysize - 1; i >= 0; i--)
     {
       Enemy EnCheck = Enemies.get(i);
-
+      //Checks distance between enemy and both player bullets
       if ( dist( EnCheck.x, EnCheck.y, RBullet, y) < 50 || dist( EnCheck.x, EnCheck.y, LBullet, y) < 50)
       {
-        EnCheck.lives -= 1;
-        EnCheck.shot = true;
-        BulLife -= 1;
+        EnCheck.lives -= 1;      //If distance is less than 50, decrement enemy life
+        EnCheck.shot = true;      //Make shot true, so points are added
+        BulLife -= 1;              //Decrement Bullet life
       }
     }
   }

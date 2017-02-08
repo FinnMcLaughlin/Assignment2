@@ -11,8 +11,8 @@ class GameOver
 
   void GameOverScreen(int s)
   {
-    if (win == true)
-    {
+    if (win == true) //If boss defeated
+    {                 //Display Win Game Over screen 
       fill(0, 255, 0);
       textSize(60);
       text("YOU WIN", 60, 200);
@@ -22,7 +22,8 @@ class GameOver
       textSize(35);
       text("Main Menu", 125, 400);
       fill(255);
-    } else
+    } 
+    else
     {
       textSize(60);
       text("Score", 140, 250);

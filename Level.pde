@@ -17,7 +17,6 @@ class Level
     case 1: 
       level = Level1(level);
       break;
-
     case 2: 
       level = Level2(level);
       break;
@@ -25,7 +24,7 @@ class Level
       level = Final(level);
       break;
     case 4:       
-      frameCount = 0;
+      frameCount = 0; //Re-initilize frameCount to 0 before every game
       level = 1;
       break;
     }
@@ -36,7 +35,7 @@ class Level
 
   int Level1(int lev)
   {    
-    if (levcheck == true)
+    if (levcheck == true) //Level 1 text displayed
     {
       fill(255);
       textSize(30);
@@ -44,6 +43,7 @@ class Level
       fill(0, 255, 0);
     }
 
+    //Enemies spawn based on frameCount
     if (frameCount == 60)
     {
       levcheck = false;
@@ -144,7 +144,7 @@ class Level
     {
       levcheck = true;
     }
-
+    
     if (levcheck == true)
     {
       fill(255);
