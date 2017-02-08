@@ -137,20 +137,20 @@ class Player
       PlayerBullet PB = new PlayerBullet(gunlpos, gunrpos, 725, 3);
       PBullets.add(PB);
     }
-    
-    if(lives <= 0)
+
+    if (lives <= 0)
     {
       gameOver = true;
     }
-    
-    if(regen == true)
+
+    if (regen == true)
     {
-      if(frameCount % 60 == 0)
+      if (frameCount % 60 == 0)
       {
         regen = false;
       }
     }
-    
+
     PLives = lives;
   }
 }

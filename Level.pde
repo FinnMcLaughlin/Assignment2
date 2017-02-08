@@ -29,21 +29,21 @@ class Level
       level = 1;
       break;
     }
-    
+
     L = level;
   }
 
 
   int Level1(int lev)
   {    
-    if(levcheck == true)
+    if (levcheck == true)
     {
       fill(255);
       textSize(30);
       text("Level 1", 250, 310);
       fill(0, 255, 0);
     }
-    
+
     if (frameCount == 60)
     {
       levcheck = false;
@@ -140,12 +140,12 @@ class Level
 
   int Level2(int lev)
   {
-    if(frameCount == 1350)
+    if (frameCount == 1350)
     {
       levcheck = true;
     }
-    
-    if(levcheck == true)
+
+    if (levcheck == true)
     {
       fill(255);
       textSize(30);
@@ -277,55 +277,55 @@ class Level
 
     return(lev);
   }
-  
-  
+
+
   int Final(int lev)
   {
     float pos;
-    
-    if(frameCount == 2900)
+
+    if (frameCount == 2900)
     {
       levcheck = true;
     }
-    
-    if(levcheck == true)
+
+    if (levcheck == true)
     {
       fill(255);
       textSize(30);
       text("Final Level", 225, 310);
       fill(0, 255, 0);
     }
-    
-    if(frameCount == 2960)
+
+    if (frameCount == 2960)
     {
       levcheck = false;
     }
-    
-    if(frameCount == 3000)
+
+    if (frameCount == 3000)
     {
       ESprite = new Boss(310, 125, 4, 1, 500, false);
       Enemies.add(ESprite);
     }
-    
-    if(frameCount % 300 == 0 && frameCount > 3000)
+
+    if (frameCount % 300 == 0 && frameCount > 3000)
     {
       pos = random(225, 600);
-      
-      for(int i=50; i < 300; i += 75)
+
+      for (int i=50; i < 300; i += 75)
       {
         ESprite = new Guard(-50-i, pos, 3, 3, 15, false, false, -50);
         Enemies.add(ESprite);
       }
-      
+
       pos = random(225, 600);
-      
-      for(int i=50; i < 300; i += 75)
+
+      for (int i=50; i < 300; i += 75)
       {
         ESprite = new Guard(650+i, pos, 3, 3, 15, false, false, 650);
         Enemies.add(ESprite);
       }
     }
-    
+
     return(lev);
   }
 }

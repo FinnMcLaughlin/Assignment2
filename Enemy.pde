@@ -10,7 +10,7 @@ class Enemy
   boolean check = false, dead, shot;
   color boss = color(90, 180, 235);
 
-  void CreateHive()                            //Create Hive
+  void CreateHive()                          //Create Hive
   {
     Hive = createShape(GROUP);
 
@@ -201,8 +201,8 @@ class Enemy
 
 
   void Render()
-  {    
-    if (type == 1 && dead == false)
+  {
+    if (type == 1 && dead == false) //if dead, do not render
     {
       shape(Hive, x, y);
     }
@@ -222,9 +222,9 @@ class Enemy
 
   void Update()
   {
-    if (type == 1)
+    if (type == 1 && dead == false) //If Hive enemy and enemy not dead
     {
-      switch(p)
+      switch(p) //P dictates what pattern the enemy will run 
       {
       case 1: 
         y = TopDown(y);
@@ -240,19 +240,20 @@ class Enemy
         break;
       }
 
-      if (y > 820 || lives <= 12)
-      {
-        Enemies.remove(this);
-        dead = true;
-        if(shot == true)
-        {
+      if (y > 820 || lives <= 12)   
+      {                             //If enemy goes off the screen, or lives drop below
+        Enemies.remove(this);        //Remove enemy from Enemy array
+        dead = true;                  //Make dead true to prevent enemy from being rendered
+        if (shot == true)              //If enemy is shot
+        {                               //Score incremented
           score += 100;
         }
       }
-    } else if (type == 2 && dead == false)
+    } 
+    else if (type == 2 && dead == false) //If enemy is Patriot and enemy not dead
     {
 
-      switch(p)
+      switch(p)//P dictates the pattern the enemy will run
       {
       case 1: 
         y = TopDown(y);
@@ -268,20 +269,21 @@ class Enemy
         break;
       }
 
-      y = Bullet(x, y);
+      y = Bullet(x, y); //Bullet method called
 
       if ( y > 820 || lives <= 0)
-      {
-        Enemies.remove(this);
-        dead = true;
-        if(shot == true)
-        {
+      {                              //If enemy goes off screen or lives drops to 0
+        Enemies.remove(this);          //Enemy is removed from enemy array
+        dead = true;                    //Make dead true so enemy is not rendered
+        if (shot == true)                //If enemy is shot
+        {                                 //Score is incremented
           score += 200;
         }
       }
-    } else if (type == 3 && dead == false)
+    } 
+    else if (type == 3 && dead == false) //If Guard enemy and enemy not dead
     {
-      switch(p)
+      switch(p) //P dictates which pattern enemy will run
       {
       case 3: 
         Guarding(x, strtpos);
@@ -290,29 +292,30 @@ class Enemy
         break;
       }
 
-      if ( (x < -500 || x > 1000) || lives <= 0 )
-      {
-        Enemies.remove(this);
-        dead = true;
-        if(shot == true)
-        {
+      if ( (x < -500 || x > 1000) || lives <= 0 ) 
+      {                                           //If enemy goes off screen or lives drop to 0 
+        Enemies.remove(this);                       //Enemies is removed from enemy array list
+        dead = true;                                 //Make dead true so enemy is not rendered
+        if (shot == true)                             //If enemy is shot
+        {                                              //Score is incremented
           score += 50;
         }
       }
-    } else if (type == 4 && dead == false)
+    } 
+    else if (type == 4 && dead == false) //If boss enemy and enemy is not dead
     {
       boss = Boss(x, boss);
-      
-      if(lives <= 0)
-      {
-        Enemies.remove(this);
-        dead = true;
-        score += 1000;
-        win = true;
-        gameOver = true;
+
+      if (lives <= 0) 
+      {                        //If lives drops to 0
+        Enemies.remove(this);   //Remove enemy from Enemy array list
+        dead = true;             //Make dead true so enemy is not rendered
+        score += 1000;            //Score is incremented
+        win = true;                //Win is made true so winning title appears
+        gameOver = true;            //Game over is made true so the game ends
       }
-      
-      BLife = lives;
+
+      BLife = lives; //Keeps track of Boss's life to render health bar
     }
   }
 
@@ -321,58 +324,62 @@ class Enemy
 
   float TopDown(float ypos)
   {
-    ypos = ypos + 3;
+    ypos = ypos + 3; //Enemy moves from top to the bottom of the screen
     return(ypos);
   }
 
   float ZigZag(float xpos, float ypos, boolean c)
   { 
-    if (x > 700 && c == false)
+    if (x > 700 && c == false) //Initial check to determine initial direction of enemy
     {
-      dir = -dir;
-      c = true;
+      dir = -dir; //Changes direction of initial zig zag
+      c = true; //Prevents if statement from being run again 
     }
 
-    if (x < 50 || x > 590)
+    if (x < 50 || x > 590) //If enemy hits edge of the screen
     {
-      dir = -dir;
+      dir = -dir; //Change directions
     }
 
-    x = xpos + dir;
-    ypos = ypos + 3;
+    x = xpos + dir; //Enemy moves from side to side
+    ypos = ypos + 3; //Enemy moves from top to the bottom of the screen
 
     return(ypos);
   }
 
   void Guarding(float xpos, float start)
   {
-    if (start > 310)
+    if (start > 310) //If enemy starts on the right side of the screen
     {
-      x = xpos - dir;
-    } else
+      x = xpos - dir; //Enemy moves from right to left
+    } 
+    else //If enemy starts on the left side of the screen
     {
-      x = xpos + dir;
+      x = xpos + dir; //Enemy moves from left to right
     }
   }
 
   float Corner(float xpos, float ypos)
   {
-    if (xpos > 310)
+    if (xpos > 310) //If enemy starts on right hand of screen 
     {
-      if (xpos == 440)
+      if (xpos == 440) 
       {
         ypos = ypos + 3;
-      } else
+      } 
+      else
       {
         x = xpos - 2;
         ypos = ypos + 3;
       }
-    } else
+    } 
+    else
     {
       if (xpos == 190)
       {
         ypos = ypos + 3;
-      } else
+      } 
+      else
       {
         x = xpos + 2;
         ypos = ypos + 3;
@@ -394,11 +401,13 @@ class Enemy
       c = color(255, 0, 0);
       check = true;
       laser = true;
-    } else if (frameCount % 60 == 0)
+    } 
+    else if (frameCount % 60 == 0)
     {
       check = false;
       laser = false;
-    } else if (check == false)
+    } 
+    else if (check == false)
     {
       c = color(90, 130, 235);
       x = xpos + dir;
