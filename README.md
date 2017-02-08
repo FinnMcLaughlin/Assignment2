@@ -12,3 +12,13 @@ Level 2 introduces a new enemy, Patriots. Although these enemies have less healt
 
 ##Final Level
 The final level does not include either the Hive or the Patriot enemy. Instead the final level features the introduction of 'The Eye', a boss enemy who moves from side to side, firing a laser every 3/4 seconds. The Eye's health is significantly more than the previous enemies, with it's health bar appearing above it. As well as the boss enemy, a new enemy is introduced, the Guard. The Guard enemy appears in groups of 4, and moves from one side of the screen to the other, in an attempt to block the player's bullets and protect 'The Eye'. These enemies have significantly less health than the enemies from previous levels, yet their strength in numbers proves a challenge when attempting to defeat 'The Eye'
+
+##Controls
+- A = move left
+- D = move right
+
+##Key features
+- Variation of enemies
+- Variation of movement patterns
+- Boss Level
+- 100% procedurally drawn
