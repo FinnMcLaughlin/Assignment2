@@ -31,6 +31,7 @@ class GameOver
 
       textSize(35);
       text("Main Menu", 125, 350);
+      fill(255);
     }
   }
 }
